@@ -4,9 +4,14 @@ import Link from "next/link";
 import { PiHouseLight, PiGithubLogo } from "react-icons/pi";
 import Image from "next/image";
 
-
 // https://github.com/Joscriptt/portfolioo  ini nanti diambil
-//
+// TODO: menambahkan animasi
+// TODO: membuat components reusable
+// TODO: menambahkan project
+// TODO: menambahkan skill
+// TODO: menambahkan children components
+// TODO: mendirect setiap link ke halaman yang benar
+// TODO: menambahkan light dan dark mode
 
 export default function page() {
   return (
