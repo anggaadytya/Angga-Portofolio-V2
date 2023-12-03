@@ -63,7 +63,7 @@ function RightPage() {
 
               <div className="border border-neutral-700 my-5" />
 
-              <div className="flex items-center gap-x-4 justify-center">
+              <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
                 {SocialLinks.map((link, index) => (
                   <Tooltip content={link.title} key={index}>
                     <Link
