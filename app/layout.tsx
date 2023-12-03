@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { METADATA } from "@/constant/metadata";
 import "./globals.css";
 import { Provider } from "@/components/layouts/Provider";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 export const metadata: Metadata = {
   metadataBase: new URL(

@@ -110,9 +110,6 @@ function LeftPage() {
                       <PiHouseLight className="text-neutral-100" />
                     </div>
                   </Link>
-                  <div className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center">
-                    <PiBookOpenTextLight className="text-neutral-100" />
-                  </div>
                   <div>
                     <ToggleTheme />
                   </div>
