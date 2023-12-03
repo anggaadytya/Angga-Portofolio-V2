@@ -6,6 +6,7 @@ import { SocialLinks } from "@/constant";
 import Link from "next/link";
 import { PiGithubLogoLight } from "react-icons/pi";
 import { SiFramer } from "react-icons/si";
+import { Tooltip } from "@nextui-org/react";
 
 function RightPage() {
   return (
@@ -64,9 +65,14 @@ function RightPage() {
 
               <div className="flex items-center gap-x-4 justify-center">
                 {SocialLinks.map((link, index) => (
-                  <Link href={"/"} key={index}>
-                    {link.icons}
-                  </Link>
+                  <Tooltip content={link.title} key={index}>
+                    <Link
+                      href={link.href}
+                      className="hover:scale-125 transition-all duration-300 ease-in-out"
+                    >
+                      {link.icons}
+                    </Link>
+                  </Tooltip>
                 ))}
               </div>
             </div>
