@@ -10,16 +10,20 @@ import {
   PiMagicWandThin,
   PiShapesThin,
   PiHouseLight,
+  PiSunLight,
+  PiMoonLight,
 } from "react-icons/pi";
 import { SiAdobe } from "react-icons/si";
+import ToggleTheme from "../elements/ToggleTheme";
+import WorkHistory from "../elements/WorkHistory";
 
 function LeftPage() {
-  const [open, setOpen] = React.useState(false);
-  const [email, setEmail] = React.useState("");
-
-  const skills = ["ReactJs", "NextJs", "TailwindCss", "Typescript"];
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [email, setEmail] = React.useState<string>("");
 
   const controls = useAnimation();
+
+  const skills = ["ReactJs", "NextJs", "TailwindCss", "Typescript"];
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -73,8 +77,8 @@ function LeftPage() {
                 className="bg-lime-400 w-3 h-3 cursor-pointer rounded-full absolute top-20 left-[6rem] animate-pulse"
               />
               {open && (
-                <div className="border border-lime-400 h-5 flex items-center justify-center rounded-2xl w-fit px-2 absolute top-[4.7rem] left-[7rem] transition-all duration-300 ease-in">
-                  <p className="text-[9px] font-medium text-lime-300">
+                <div className="border border-lime-400 h-6 flex items-center justify-center rounded-2xl w-fit px-4 absolute top-[4.2rem] left-[6.9rem] transition-all duration-300 ease-in">
+                  <p className="text-[11px] font-medium text-lime-300">
                     Open to hire
                   </p>
                 </div>
@@ -109,12 +113,18 @@ function LeftPage() {
                   <div className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center">
                     <PiBookOpenTextLight className="text-neutral-100" />
                   </div>
+                  <div>
+                    <ToggleTheme />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden"
+          >
             <input
               value={email}
               onChange={handleEmail}
@@ -157,38 +167,7 @@ function LeftPage() {
 
             <div className="border border-[#282828] text-neutral-300 my-6" />
 
-            <div className="my-4">
-              <h1 className="font-medium">Work History</h1>
-              <div className="mt-7 flex justify-between">
-                <div className="flex gap-x-3">
-                  <PiGoogleLogoThin className="text-xl" />
-                  <div className="-mt-1">
-                    <h3 className="text-sm font-medium">
-                      Jr. Frontend Developer
-                    </h3>
-                    <p className="text-[9px]">Google</p>
-                  </div>
-                </div>
-                <small className="text-[9px] text-neutral-300">
-                  Feb 2022 - Current
-                </small>
-              </div>
-
-              <div className="my-3 flex justify-between">
-                <div className="flex gap-x-3">
-                  <SiAdobe className="text-xl" />
-                  <div className="-mt-1">
-                    <h3 className="text-sm font-medium">
-                      Jr. Frontend Developer
-                    </h3>
-                    <p className="text-[9px]">Adobe</p>
-                  </div>
-                </div>
-                <small className="text-[9px] text-neutral-300">
-                  Sept 2021 - Jan 2022
-                </small>
-              </div>
-            </div>
+            <WorkHistory />
           </div>
         </div>
       </motion.div>

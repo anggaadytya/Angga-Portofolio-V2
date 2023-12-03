@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
+import { METADATA } from "@/constant/metadata";
 import "./globals.css";
+import { Provider } from "@/components/layouts/Provider";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
-  title: "Angga | Project",
-  description: "My personal website, showing my projects",
+  metadataBase: new URL(
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.DOMAIN || ""
+  ),
+  description: METADATA.description,
+  keywords: METADATA.keyword,
+  creator: METADATA.creator,
+  authors: {
+    name: METADATA.authors.name,
+    url: METADATA.authors.url,
+  },
+  openGraph: {
+    images: "https://avatars.githubusercontent.com/u/114200420?v=4",
+    url: METADATA.openGraph.url,
+    siteName: METADATA.openGraph.siteName,
+    locale: METADATA.openGraph.locale,
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -12,8 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-[#171717]">{children}</body>
+    <html lang="en" className="dark">
+      <body className="">
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

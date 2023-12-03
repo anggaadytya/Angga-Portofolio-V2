@@ -2,15 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { SocialLinks } from "@/constant";
+import Link from "next/link";
 import { PiGithubLogoLight } from "react-icons/pi";
-import {
-  SiCss3,
-  SiFramer,
-  SiLinkedin,
-  SiInstagram,
-  SiDiscord,
-} from "react-icons/si";
+import { SiFramer } from "react-icons/si";
 
 function RightPage() {
   return (
@@ -68,11 +63,11 @@ function RightPage() {
               <div className="border border-neutral-700 my-5" />
 
               <div className="flex items-center gap-x-4 justify-center">
-                <SiCss3 className="text-neutral-200 cursor-pointer" />
-                <PiGithubLogoLight className="text-neutral-200 cursor-pointer" />
-                <SiLinkedin className="text-neutral-200 cursor-pointer" />
-                <SiInstagram className="text-neutral-200 cursor-pointer" />
-                <SiDiscord className="text-neutral-200 cursor-pointer" />
+                {SocialLinks.map((link, index) => (
+                  <Link href={"/"} key={index}>
+                    {link.icons}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 function MainContent() {
@@ -21,7 +22,10 @@ function MainContent() {
         <h2 className="font-bold text-neutral-200 py-2">Projects</h2>
 
         <div className="flex flex-col gap-4 bg-neutral-800/50 rounded-md p-3">
-          <div className="flex gap-x-4 items-center">
+          <Link
+            href={"/dashboard/project"}
+            className="flex gap-x-4 items-center justify-between  hover:scale-105 hover:shadow-sm hover:shadow-neutral-300 hover:rounded-lg transition-all duration-200 ease-in-out cursor-pointer"
+          >
             <Image
               src="https://avatars.githubusercontent.com/u/114200420?v=4"
               alt="logo"
@@ -31,14 +35,15 @@ function MainContent() {
             />
 
             <div>
-              <h3 className="text-neutral-200 font-medium">Angga</h3>
+              <h3 className="text-neutral-200 font-medium">Angga Adytya</h3>
               <p className="text-neutral-400 font-normal">
                 This is my personal website
               </p>
             </div>
-          </div>
+            <div className="text-neutral-400">ARROW </div>
+          </Link>
 
-          <div className="flex gap-x-4 items-center">
+          <div className="flex gap-x-4 items-center  hover:scale-105 hover:shadow-sm hover:shadow-neutral-300 hover:rounded-lg transition-all duration-200 ease-in-out cursor-pointer">
             <Image
               src="https://avatars.githubusercontent.com/u/114200420?v=4"
               alt="logo"
@@ -56,7 +61,7 @@ function MainContent() {
           </div>
         </div>
       </div>
-      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-5 ">
+      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-2 ">
         <Image
           src="https://avatars.githubusercontent.com/u/114200420?v=4"
           alt="logo"

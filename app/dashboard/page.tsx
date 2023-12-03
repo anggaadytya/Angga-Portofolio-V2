@@ -1,16 +1,15 @@
-import LeftPage from "@/components/layouts/LeftPage";
 import MainContent from "@/components/layouts/MainContent";
-import RightPage from "@/components/layouts/RightPage";
+import { Metadata } from "next";
+import { METADATA } from "@/constant/metadata";
 import React from "react";
 
+export const metadata: Metadata = {
+  title: `${METADATA.creator} | Dashboard`,
+  alternates: {
+    canonical: process.env.DOMAIN,
+  },
+};
+
 export default function page() {
-  return (
-    <div className="max-w-[78rem] mx-auto">
-      <div className="gap-3 flex md:mt-5 flex-col md:flex-row justify-center">
-        <LeftPage />
-        <MainContent />
-        <RightPage />
-      </div>
-    </div>
-  );
+  return <MainContent />;
 }
