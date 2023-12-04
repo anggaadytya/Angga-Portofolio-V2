@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PiHouseLight } from "react-icons/pi";
-import ToggleTheme from "../elements/ToggleTheme";
-import WorkHistory from "../elements/WorkHistory";
-import Bio from "../elements/Bio";
-import SkillText from "../elements/SkillText";
-import FormEmail from "../elements/FormEmail";
-import LineBreak from "../elements/LineBreak";
-import AvatarImage from "../elements/AvatarImage";
+import ToggleTheme from "../../../components/ToggleTheme";
+import WorkHistory from "../components/WorkHistory";
+import Bio from "../components/Bio";
+import SkillText from "../components/SkillText";
+import FormEmail from "../components/FormEmail";
+import LineBreak from "../../../components/LineBreak";
+import AvatarImage from "../../../components/AvatarImage";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);

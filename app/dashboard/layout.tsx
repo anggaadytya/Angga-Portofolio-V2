@@ -1,5 +1,5 @@
-import LeftPage from "@/components/layouts/LeftPage";
-import RightPage from "@/components/layouts/RightPage";
+import LeftPage from "@/modules/dashboard/layouts/LeftPage";
+import RightPage from "@/modules/dashboard/layouts/RightPage";
 import React, { Suspense } from "react";
 import Loading from "../loading";
 

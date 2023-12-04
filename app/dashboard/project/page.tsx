@@ -1,7 +1,7 @@
 import React from "react";
 
-import BackButton from "@/components/elements/BackButton";
-import Container from "@/components/elements/Container";
+import BackButton from "@/components/BackButton";
+import Container from "@/components/Container";
 
 export default function Page() {
   return (

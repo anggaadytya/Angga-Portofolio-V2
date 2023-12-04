@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { METADATA } from "@/constant/metadata";
 import "./globals.css";
-import { Provider } from "@/components/layouts/Provider";
+import { Provider } from "@/hooks/Provider";
 import { Suspense } from "react";
 import Loading from "./loading";
 

@@ -1,7 +1,8 @@
-import MainContent from "@/components/layouts/MainContent";
+import React from "react";
+import Dashboard from "@/modules/dashboard";
+
 import { Metadata } from "next";
 import { METADATA } from "@/constant/metadata";
-import React from "react";
 
 export const metadata: Metadata = {
   title: `${METADATA.creator} | Dashboard`,
@@ -11,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <MainContent />;
+  return <Dashboard />;
 }

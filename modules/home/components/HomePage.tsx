@@ -2,17 +2,17 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ToggleTheme from "@/components/elements/ToggleTheme";
+import ToggleTheme from "@/components/ToggleTheme";
 
 import { motion } from "framer-motion";
 import { PiHouseLight } from "react-icons/pi";
 import { TypeAnimation } from "react-type-animation";
-import AvatarImage from "@/components/elements/AvatarImage";
+import AvatarImage from "@/components/AvatarImage";
 
 const HomePage = () => {
   return (
     <main>
-      <div className="p-5 fixed bottom-28 flex flex-col items-center justify-center mx-auto w-full">
+      <div className="p-5 flex flex-col items-center justify-center mx-auto w-full h-screen">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{
@@ -26,7 +26,7 @@ const HomePage = () => {
               damping: 10,
             },
           }}
-          className="bg-neutral-600 rounded-full h-60 w-60 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
+          className="bg-neutral-600 rounded-full h-60 w-60 md:h-80 md:w-80 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
         >
           <AvatarImage />
         </motion.div>

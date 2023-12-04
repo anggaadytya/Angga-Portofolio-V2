@@ -10,6 +10,7 @@ import { METADATA } from "@/constant/metadata";
 // TODO: menambahkan project
 // TODO: menambahkan skill
 // TODO: menambahkan animasi
+// TODO: marquee animasi fix
 
 export const metadata: Metadata = {
   title: `${METADATA.creator} | Personal Website`,
