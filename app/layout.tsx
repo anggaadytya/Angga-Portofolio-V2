@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { METADATA } from "@/constant/metadata";
 import "./globals.css";
 import { Provider } from "@/components/layouts/Provider";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -33,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="">
-        <Provider>{children}</Provider>
+        <Provider>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </Provider>
       </body>
     </html>
   );
