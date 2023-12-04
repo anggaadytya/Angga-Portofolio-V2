@@ -21,7 +21,7 @@ const HomePage = () => {
               stiffness: 200,
               delay: 0.2,
               type: "spring",
-              damping: 20,
+              damping: 10,
             },
           }}
           className="bg-neutral-600 rounded-full h-70 w-70 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
@@ -34,6 +34,7 @@ const HomePage = () => {
             className="object-cover w-full h-full rounded-full "
           />
         </motion.div>
+
         <h1 className="text-5xl text-center my-9 font-extrabold text-neutral-800 dark:text-neutral-400 animate-hover-animate">
           Muhammad Angga Adytya
         </h1>
