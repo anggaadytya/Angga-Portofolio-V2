@@ -51,56 +51,41 @@ function RightPage() {
 
           <div className="text-neutral-400">
             <h1 className="font-medium text-neutral-200">Featured in</h1>
+            
             <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
               <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
                 <PiGithubLogoLight />
               </div>
-<<<<<<< HEAD
               <h3 className="text-xs">
                 Sispar Cabai by React <br />
                 React
               </h3>
             </div>
+
             <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
               <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
-                <SiFramer />
-=======
-
-              <div className="border border-neutral-700 my-5" />
-
-              <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
-                {SocialLinks.map((link, index) => (
-                  <Tooltip content={link.title} key={index}>
-                    <Link
-                      href={link.href}
-                      className="hover:scale-125 transition-all duration-300 ease-in-out"
-                    >
-                      {link.icons}
-                    </Link>
-                  </Tooltip>
-                ))}
->>>>>>> 9da5c714bf69c743d069b0753481fdb656ec2f00
+                <PiGithubLogoLight />
               </div>
               <h3 className="text-xs">
-                animate to easy react <br />
-                Framer Motion
+                Sispar Cabai by React <br />
+                React
               </h3>
             </div>
-          </div>
 
-          <LineBreak />
+            <LineBreak />
 
-          <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
-            {SocialLinks.map((link, index) => (
-              <Tooltip content={link.title} key={index}>
-                <Link
-                  href={link.href}
-                  className="hover:scale-125 transition-all duration-300 ease-in-out"
-                >
-                  {link.icons}
-                </Link>
-              </Tooltip>
-            ))}
+            <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
+              {SocialLinks.map((link, index) => (
+                <Tooltip content={link.title} key={index}>
+                  <Link
+                    href={link.href}
+                    className="hover:scale-125 transition-all duration-300 ease-in-out"
+                  >
+                    {link.icons}
+                  </Link>
+                </Tooltip>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -116,6 +101,7 @@ function RightPage() {
           </div>
           <h1 className="font-bold text-neutral-200">Spotify</h1>
         </div>
+
       </div>
     </motion.div>
   );
