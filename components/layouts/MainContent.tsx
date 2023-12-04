@@ -19,6 +19,7 @@ function MainContent() {
         <h1 className="font-bold text-neutral-200">Hello</h1>
 
         <div className="border border-neutral-700 my-5" />
+
         <h2 className="font-bold text-neutral-200 py-2">Projects</h2>
 
         <div className="flex flex-col gap-4 bg-neutral-800/50 rounded-md p-3">
@@ -60,8 +61,10 @@ function MainContent() {
             </div>
           </div>
         </div>
+
       </div>
-      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-2 ">
+
+      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 ">
         <Image
           src="https://avatars.githubusercontent.com/u/114200420?v=4"
           alt="logo"

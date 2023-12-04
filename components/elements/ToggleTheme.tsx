@@ -15,7 +15,7 @@ export default function ToggleTheme({ className }: ToggleThemeProps) {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+
 
   return (
     <button
