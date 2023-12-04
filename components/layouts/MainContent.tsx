@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function MainContent() {
   return (
-    <motion.div
+    <motion.main
       initial={{ y: -10, opacity: 0 }}
       animate={{
         y: 0,
@@ -15,7 +15,7 @@ function MainContent() {
       }}
       className=" w-full md:w-[50%] h-fit md:sticky top-5 rounded-2xl"
     >
-      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 ">
+      <section className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 ">
         <h1 className="font-bold text-neutral-200">Hello</h1>
 
         <div className="border border-neutral-700 my-5" />
@@ -62,9 +62,9 @@ function MainContent() {
           </div>
         </div>
 
-      </div>
+      </section>
 
-      <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 ">
+      <section className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 ">
         <Image
           src="https://avatars.githubusercontent.com/u/114200420?v=4"
           alt="logo"
@@ -72,8 +72,8 @@ function MainContent() {
           height={900}
           className="object-cover w-full h-full rounded-lg"
         />
-      </div>
-    </motion.div>
+      </section>
+    </motion.main>
   );
 }
 

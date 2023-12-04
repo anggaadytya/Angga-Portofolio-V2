@@ -11,7 +11,7 @@ import AvatarImage from "@/components/elements/AvatarImage";
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <div className="p-5 fixed bottom-28 flex flex-col items-center justify-center mx-auto w-full">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
@@ -101,7 +101,7 @@ const HomePage = () => {
           <ToggleTheme className="hover:scale-150 transition-all duration-300 ease-in-out" />
         </motion.div>
       </div>
-    </>
+    </main>
   );
 };
 

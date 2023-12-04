@@ -17,7 +17,7 @@ function LeftPage() {
 
   return (
     <>
-      <motion.div
+      <motion.header
         initial={{ opacity: 0, y: 10 }}
         animate={{
           opacity: 1,
@@ -26,7 +26,7 @@ function LeftPage() {
         }}
         className=" md:block bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl"
       >
-        <div className="w-full md:w-80 p-3 border border-neutral-800 rounded-2xl h-full bg-[#1c1c1c] ">
+        <section className="w-full md:w-80 p-3 border border-neutral-800 rounded-2xl h-full bg-[#1c1c1c] ">
           <div className="flex ">
             <div className="w-full relative">
               <AvatarImage className="w-28 h-28" />
@@ -69,8 +69,8 @@ function LeftPage() {
           <Bio />
           <LineBreak />
           <WorkHistory />
-        </div>
-      </motion.div>
+        </section>
+      </motion.header>
     </>
   );
 }

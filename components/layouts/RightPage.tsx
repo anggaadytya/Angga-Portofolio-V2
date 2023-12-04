@@ -18,7 +18,7 @@ function RightPage() {
   };
 
   return (
-    <motion.div
+    <motion.footer
       initial={{ y: 10, opacity: 0 }}
       animate={{
         y: 0,
@@ -32,7 +32,7 @@ function RightPage() {
       }}
       className=" lg:block w-full lg:w-fit "
     >
-      <div className="w-full md:w-60 rounded-2xl h-fit md:sticky top-5">
+      <section className="w-full md:w-60 rounded-2xl h-fit md:sticky top-5">
         <div className="bg-[#1c1c1c] min-w-min rounded-2xl p-4 border border-neutral-800 ">
           <h2 className="font-bold text-neutral-200">Resume</h2>
           <p className="text-xs my-3 text-neutral-400 font-medium leading-1 tracking-tight text-justify">
@@ -51,7 +51,7 @@ function RightPage() {
 
           <div className="text-neutral-400">
             <h1 className="font-medium text-neutral-200">Featured in</h1>
-            
+
             <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
               <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
                 <PiGithubLogoLight />
@@ -102,8 +102,8 @@ function RightPage() {
           <h1 className="font-bold text-neutral-200">Spotify</h1>
         </div>
 
-      </div>
-    </motion.div>
+      </section>
+    </motion.footer>
   );
 }
 
