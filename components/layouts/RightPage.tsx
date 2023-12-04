@@ -55,6 +55,7 @@ function RightPage() {
               <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
                 <PiGithubLogoLight />
               </div>
+<<<<<<< HEAD
               <h3 className="text-xs">
                 Sispar Cabai by React <br />
                 React
@@ -63,6 +64,22 @@ function RightPage() {
             <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
               <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
                 <SiFramer />
+=======
+
+              <div className="border border-neutral-700 my-5" />
+
+              <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
+                {SocialLinks.map((link, index) => (
+                  <Tooltip content={link.title} key={index}>
+                    <Link
+                      href={link.href}
+                      className="hover:scale-125 transition-all duration-300 ease-in-out"
+                    >
+                      {link.icons}
+                    </Link>
+                  </Tooltip>
+                ))}
+>>>>>>> 9da5c714bf69c743d069b0753481fdb656ec2f00
               </div>
               <h3 className="text-xs">
                 animate to easy react <br />
