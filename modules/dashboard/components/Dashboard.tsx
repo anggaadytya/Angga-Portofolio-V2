@@ -77,25 +77,28 @@ const Dashboard = () => {
             paragraf="My Coding Skills"
             icons={<FiCode />}
           />
-          <div className=" flex items-center justify-around gap-x-2 ">
-            {/* <Marquee style={{ width: "100%" }}> */}
-            <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-28 tracking-wide">
-              <SiHtml5 />
-              <h3>HTML</h3>
-            </div>
-            <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-28 tracking-wide">
-              <SiCss3 />
-              <h3>CSS</h3>
-            </div>
-            <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-28 tracking-wide">
-              <SiJavascript />
-              <h3>Javascript</h3>
-            </div>
-            <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-28 tracking-wide">
-              <SiJavascript />
-              <h3>Javascript</h3>
-            </div>
-            {/* </Marquee> */}
+          <div className=" flex items-center gap-10 ">
+            <Marquee style={{ width: "100%" }}>
+              <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-full tracking-wide">
+                <SiHtml5 />
+                <h3>HTML</h3>
+              </div>
+              <div className="w-4" />
+              <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-full tracking-wide">
+                <SiCss3 />
+                <h3>CSS</h3>
+              </div>
+              <div className="w-4" />
+              <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-full tracking-wide">
+                <SiJavascript />
+                <h3>Javascript</h3>
+              </div>
+              <div className="w-4" />
+              <div className="flex items-center justify-center gap-x-1 bg-[#696969] text-neutral-50 rounded-md p-1 h-7 text-xs font-medium w-full tracking-wide">
+                <SiJavascript />
+                <h3>Javascript</h3>
+              </div>
+            </Marquee>
           </div>
         </div>
       </section>
