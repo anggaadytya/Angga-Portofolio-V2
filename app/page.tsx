@@ -7,8 +7,6 @@ import { METADATA } from "@/constant/metadata";
 // https://github.com/Joscriptt/portfolioo  ini nanti diambil
 
 // TODO: membuat components reusable
-// TODO: mendirect setiap link ke halaman yang benar
-// TODO: menambahkan children components
 // TODO: menambahkan project
 // TODO: menambahkan skill
 // TODO: menambahkan animasi

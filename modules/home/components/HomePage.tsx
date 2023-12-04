@@ -7,6 +7,7 @@ import ToggleTheme from "@/components/elements/ToggleTheme";
 import { motion } from "framer-motion";
 import { PiHouseLight } from "react-icons/pi";
 import { TypeAnimation } from "react-type-animation";
+import AvatarImage from "@/components/elements/AvatarImage";
 
 const HomePage = () => {
   return (
@@ -25,15 +26,9 @@ const HomePage = () => {
               damping: 10,
             },
           }}
-          className="bg-neutral-600 rounded-full h-70 w-70 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
+          className="bg-neutral-600 rounded-full h-60 w-60 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
         >
-          <Image
-            src="/heroImage.svg"
-            alt="logo"
-            width={900}
-            height={900}
-            className="object-cover w-full h-full rounded-full "
-          />
+          <AvatarImage />
         </motion.div>
 
         <motion.div
@@ -98,7 +93,7 @@ const HomePage = () => {
           }}
           className="fixed bottom-7 flex border border-neutral-600 rounded-lg p-2 gap-x-5 text-neutral-500"
         >
-          <Link href={"/dashboard"}>
+          <Link href={"/dashboard"} aria-label="Dashboard">
             <span className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out">
               <PiHouseLight className="text-neutral-900 dark:text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
             </span>

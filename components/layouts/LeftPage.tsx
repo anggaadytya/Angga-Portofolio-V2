@@ -10,6 +10,7 @@ import Bio from "../elements/Bio";
 import SkillText from "../elements/SkillText";
 import FormEmail from "../elements/FormEmail";
 import LineBreak from "../elements/LineBreak";
+import AvatarImage from "../elements/AvatarImage";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -28,15 +29,7 @@ function LeftPage() {
         <div className="w-full md:w-80 p-3 border border-neutral-800 rounded-2xl h-full bg-[#1c1c1c] ">
           <div className="flex ">
             <div className="w-full relative">
-              <div className="w-28 h-28 rounded-full bg-neutral-600">
-                <Image
-                  src="/heroImage.svg"
-                  alt="logo"
-                  width={900}
-                  height={900}
-                  className="object-cover w-28 h-28 rounded-full"
-                />
-              </div>
+              <AvatarImage className="w-28 h-28" />
               <div
                 onClick={() => setOpen(!open)}
                 className="bg-lime-400 w-3 h-3 cursor-pointer rounded-full absolute top-20 left-[6rem] animate-pulse"
@@ -69,8 +62,10 @@ function LeftPage() {
               </div>
             </div>
           </div>
+
           <SkillText />
           <FormEmail />
+          <LineBreak />
           <Bio />
           <LineBreak />
           <WorkHistory />

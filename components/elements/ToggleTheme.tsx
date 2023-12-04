@@ -15,10 +15,9 @@ export default function ToggleTheme({ className }: ToggleThemeProps) {
     setMounted(true);
   }, []);
 
-
-
   return (
     <button
+      aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out"
     >
