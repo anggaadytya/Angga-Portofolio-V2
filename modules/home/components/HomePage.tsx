@@ -47,7 +47,7 @@ const HomePage = () => {
               damping: 20,
             },
           }}
-          className="font-bold py-5"
+          className="font-bold text-xl md:text-4xl py-5"
         >
           <TypeAnimation
             sequence={[
@@ -60,7 +60,7 @@ const HomePage = () => {
             ]}
             wrapper="span"
             speed={30}
-            style={{ fontSize: "2em", display: "inline-block" }}
+            style={{ fontSize: "1em", display: "inline-block" }}
             repeat={Infinity}
           />
         </motion.div>
