@@ -8,7 +8,7 @@ export default function SkillList() {
     STACKS
   ).sort(() => Math.random() - 0.5);
   return (
-    <section className=" max-w-[22rem] md:max-w-[37rem] mx-auto">
+    <section className=" max-w-[20rem] md:max-w-[37rem] mx-auto">
       <div className="flex flex-col overflow-x-hidden">
         {Array.from({ length: 2 }, (_, index) => {
           const slider = [...stacksInArray].sort(() => Math.random() - 0.5);
