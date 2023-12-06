@@ -1,15 +1,23 @@
-import React from "react";
-
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
+import { METADATA } from "@/constant/metadata";
+import { Metadata } from "next";
+import React from "react";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: `Project ${METADATA.exTitle}`,
+  description: "Project All Showing Page",
+  keywords: "portofolio frontend developer",
+  alternates: {
+    canonical: `${process.env.DOMAIN}/dashboard/project`,
+  },
+};
+
+export default function page() {
   return (
-    <>
-      <Container>
-        <BackButton />
-        <h1 className="text-3xl font-bold text-neutral-400">Project</h1>
-      </Container>
-    </>
+    <Container>
+      <BackButton />
+      <h1>PROJECT ALL</h1>
+    </Container>
   );
 }

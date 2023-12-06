@@ -9,7 +9,7 @@ interface TitleDashboardProps {
 const TitleDashboard = ({ icons, title, paragraf }: TitleDashboardProps) => {
   return (
     <div>
-      <div className="flex gap-x-3 items-center ">
+      <div className="flex gap-x-3 items-center space-y-1 ">
         {icons}
         <h2 className="font-bold text-neutral-200 pb-1">{title}</h2>
       </div>
