@@ -56,10 +56,10 @@ const Dashboard = () => {
         {filter.map((project) => (
           <CardProject key={project.id} {...project} />
         ))}
-        <div className="flex items-center justify-center py-2">
+        <div className="flex items-center justify-center py-2 ">
           <Link
             href={"/dashboard/project"}
-            className="bg-[#696969] h-7 p-1 rounded-md text-xs w-40 font-medium text-neutral-50 hover:bg-neutral-600 flex items-center justify-center"
+            className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium text-neutral-50 hover:bg-neutral-600 flex items-center justify-center"
           >
             Show More
           </Link>
