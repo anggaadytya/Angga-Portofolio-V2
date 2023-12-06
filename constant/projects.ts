@@ -19,7 +19,7 @@ export const PROJECTS: ProjectProps[] = [
       "https://res.cloudinary.com/ddugt5n5v/image/upload/v1701778544/CarsLanding1_ubuuze.svg",
     link_demo: "",
     link_github: "",
-    techs: ["NextJS", "TailwindCSS", "TypeScript", "Vercel"],
+    techs: ["Next.js", "TailwindCSS", "TypeScript", "Vercel"],
   },
   {
     id: 2,
@@ -41,6 +41,6 @@ export const PROJECTS: ProjectProps[] = [
       "https://res.cloudinary.com/ddugt5n5v/image/upload/v1701778549/SisparCabai1_papj9c.svg",
     link_demo: "",
     link_github: "",
-    techs: ["Vite.Js", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
+    techs: ["Vite", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
   },
 ];

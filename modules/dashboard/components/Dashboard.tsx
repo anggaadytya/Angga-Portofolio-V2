@@ -52,7 +52,7 @@ const Dashboard = () => {
         />
         {PROJECTS.map((project) => (
           <Link
-            href={`/anime/${project.slug}`}
+            href={`/dashboard/project/${project.slug}`}
             key={project.id}
             className="flex gap-x-4 items-center hover:bg-neutral-800 rounded-lg p-3 my-2 transition-all duration-200 ease-in-out cursor-pointer group"
           >

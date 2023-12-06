@@ -18,6 +18,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVite,
+  SiVercel
 } from "react-icons/si";
 
 type stacksProps = {
@@ -49,4 +50,5 @@ export const STACKS: stacksProps = {
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
   "Node JS": <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} />,
+  Vercel: <SiVercel size={iconSize} />
 };
