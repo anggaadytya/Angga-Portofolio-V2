@@ -44,7 +44,7 @@ function LeftPage() {
               <h1 className="font-medium text-xl text-neutral-300 mt-3">
                 Muhammad Angga Adytya
               </h1>
-              <p className="text-xs font-medium text-neutral-300 mt-2">
+              <p className="text-xs font-medium text-neutral-400 mt-2">
                 Frontend Developer
               </p>
 

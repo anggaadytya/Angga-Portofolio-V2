@@ -1,6 +1,7 @@
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { METADATA } from "@/constant/metadata";
+import Project from "@/modules/project";
 import { Metadata } from "next";
 import React from "react";
 
@@ -17,7 +18,7 @@ export default function page() {
   return (
     <Container>
       <BackButton />
-      <h1>PROJECT ALL</h1>
+      <Project/>
     </Container>
   );
 }

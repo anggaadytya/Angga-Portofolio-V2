@@ -13,10 +13,10 @@ const WorkHistory = () => {
             {link.icons}
             <div className="-mt-1">
               <h3 className="text-sm font-medium text-neutral-50">{link.title}</h3>
-              <p className="text-[9px] text-neutral-300">{link.place}</p>
+              <p className="text-[9px] text-neutral-400">{link.place}</p>
             </div>
           </div>
-          <small className="text-[9px] text-neutral-300">
+          <small className="text-[9px] text-neutral-400">
             {link.date}
           </small>
         </div>

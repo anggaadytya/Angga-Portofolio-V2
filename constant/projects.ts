@@ -7,6 +7,7 @@ interface ProjectProps {
   link_demo?: string | null;
   link_github?: string | null;
   techs: string[];
+  is_show: boolean;
 }
 
 export const PROJECTS: ProjectProps[] = [
@@ -20,6 +21,7 @@ export const PROJECTS: ProjectProps[] = [
     link_demo: "",
     link_github: "",
     techs: ["Next.js", "TailwindCSS", "TypeScript", "Vercel"],
+    is_show: true,
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ export const PROJECTS: ProjectProps[] = [
       "https://res.cloudinary.com/ddugt5n5v/image/upload/v1701778544/AnggaPorto1_nsbigz.svg",
     link_demo: "",
     link_github: "",
-    techs: ["Vite.Js", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
+    techs: ["Vite", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
+    is_show: true,
   },
   {
     id: 3,
@@ -42,5 +45,18 @@ export const PROJECTS: ProjectProps[] = [
     link_demo: "",
     link_github: "",
     techs: ["Vite", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
+    is_show: true,
   },
+  {
+    id: 4,
+    title: "Sispar Cabai",
+    slug: "sispar-cabai-2",
+    description: "Sispar cabai by React",
+    image:
+      "https://res.cloudinary.com/ddugt5n5v/image/upload/v1701778549/SisparCabai1_papj9c.svg",
+    link_demo: "",
+    link_github: "",
+    techs: ["Vite", "TailwindCSS", "JavaScript", "Vercel", "Material UI"],
+    is_show: false,
+  }
 ];

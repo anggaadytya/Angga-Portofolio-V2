@@ -2,15 +2,18 @@
 import React, { lazy } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import LineBreak from "@/components/LineBreak";
-import { FiBookmark, FiCode, FiSave } from "react-icons/fi";
 import TitleDashboard from "@/components/TitleDashboard";
+import LineBreak from "@/components/LineBreak";
+import { motion } from "framer-motion";
+import { FiBookmark, FiCode } from "react-icons/fi";
 import { PROJECTS } from "@/constant/projects";
+import { STACKS } from "@/constant/stacks";
+import CardProject from "@/modules/project/components/CardProject";
 
 const SkillList = lazy(() => import("./SkillList"));
 
 const Dashboard = () => {
+  const filter = PROJECTS.filter((project) => project?.is_show);
   return (
     <motion.main
       initial={{ y: -10, opacity: 0 }}
@@ -50,32 +53,13 @@ const Dashboard = () => {
           paragraf="Showcase my Project"
           icons={<FiBookmark />}
         />
-        {PROJECTS.map((project) => (
-          <Link
-            href={`/dashboard/project/${project.slug}`}
-            key={project.id}
-            className="flex gap-x-4 items-center hover:bg-neutral-800 rounded-lg p-3 my-2 transition-all duration-200 ease-in-out cursor-pointer group"
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={900}
-              height={900}
-              className="object-cover w-28 h-28 rounded-lg  "
-            />
-
-            <div>
-              <h3 className="text-neutral-200 font-medium">{project.title}</h3>
-              <p className="text-neutral-400 font-normal">
-                {project.description}
-              </p>
-            </div>
-          </Link>
+        {filter.map((project) => (
+          <CardProject key={project.id} {...project} />
         ))}
         <div className="flex items-center justify-center py-2">
           <Link
             href={"/dashboard/project"}
-            className="bg-[#696969] h-7 p-1 rounded-md text-xs w-40 font-medium text-neutral-50 hover:bg-neutral-600 text-center"
+            className="bg-[#696969] h-7 p-1 rounded-md text-xs w-40 font-medium text-neutral-50 hover:bg-neutral-600 flex items-center justify-center"
           >
             Show More
           </Link>

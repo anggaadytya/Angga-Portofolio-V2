@@ -11,13 +11,13 @@ const Bio = () => {
       <div className="mt-6 flex justify-between text-sm">
         <div className="flex items-center gap-x-1">
           <PiShapesThin />
-          <span className="text-xs font-medium">
+          <span className="text-xs font-medium text-neutral-400">
             +2 years as a Frontend Developer
           </span>
         </div>
         <div className="flex items-center gap-x-1">
           <PiMagicWandThin />
-          <span className="text-xs font-medium">7+ Projects</span>
+          <span className="text-xs font-medium text-neutral-400">7+ Projects</span>
         </div>
       </div>
     </div>

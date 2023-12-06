@@ -10,19 +10,21 @@ const Feature = () => {
         <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
           <PiGithubLogoLight />
         </div>
-        <h3 className="text-xs">
-          Sispar Cabai by React <br />
-          React
+        <h3 className="text-xs text-neutral-300 font-medium">
+          Sispar Cabai by React
+          <br />
+          <span className="text-neutral-400 text-xs">React</span>
         </h3>
       </div>
-
+      
       <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md hover:cursor-pointer">
         <div className="bg-neutral-700/50 w-8 h-8 rounded-full flex items-center justify-center">
           <PiGithubLogoLight />
         </div>
-        <h3 className="text-xs">
-          Sispar Cabai by React <br />
-          React
+        <h3 className="text-xs text-neutral-300 font-medium">
+          Sispar Cabai by React
+          <br />
+          <span className="text-neutral-400 text-xs">React</span>
         </h3>
       </div>
     </div>

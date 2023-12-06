@@ -3,10 +3,16 @@ import Link from "next/link";
 import { Tooltip } from "@nextui-org/react";
 import { SocialLinks } from "@/constant";
 
+type SocialMediaProps = {
+  title: string;
+  href: string;
+  icons: JSX.Element;
+};
+
 const SocialMedia = () => {
   return (
     <div className="flex items-center md:gap-x-4 justify-around md:justify-center">
-      {SocialLinks.map((link, index) => (
+      {SocialLinks.map((link: SocialMediaProps, index: number) => (
         <Tooltip content={link.title} key={index}>
           <Link
             href={link.href}
