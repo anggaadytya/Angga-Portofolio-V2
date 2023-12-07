@@ -9,9 +9,9 @@ const Resume = () => {
   };
 
   return (
-    <div>
-      <h2 className="font-bold text-neutral-200">Resume</h2>
-      <p className="text-xs my-3 text-neutral-400 font-medium leading-1 tracking-tight text-justify">
+    <>
+      <h2 className="font-bold dark:text-neutral-200">Resume</h2>
+      <p className="text-xs my-3 dark:text-neutral-400 text-neutral-600 font-medium leading-1 tracking-tight text-justify">
         With a background in D4 Information Technology from the State
         Polytechnic of Lhokseumawe, I bring skills in website development with a
         specific focus on Frontend Development.
@@ -22,7 +22,7 @@ const Resume = () => {
       >
         Download
       </button>
-    </div>
+    </>
   );
 };
 

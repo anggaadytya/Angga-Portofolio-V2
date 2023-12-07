@@ -24,9 +24,9 @@ function LeftPage() {
           y: 0,
           transition: { duration: 0.3, type: "spring", stiffness: 120 },
         }}
-        className=" md:block bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl"
+        className=" md:block bg-neutral-100 dark:bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl shadow shadow-neutral-800 dark:shadow-neutral-400 p-3"
       >
-        <section className="w-full md:w-80 p-3 border border-neutral-800 rounded-2xl h-full bg-[#1c1c1c] ">
+        <section className=" ">
           <div className="flex ">
             <div className="w-full relative">
               <AvatarImage className="w-28 h-28" />
@@ -35,23 +35,23 @@ function LeftPage() {
                 className="bg-lime-400 w-3 h-3 cursor-pointer rounded-full absolute top-20 left-[6rem] animate-pulse"
               />
               {open && (
-                <div className="border border-lime-400 h-6 flex items-center justify-center rounded-2xl w-fit px-4 absolute top-[4.2rem] left-[6.9rem] transition-all duration-300 ease-in">
-                  <p className="text-[11px] font-medium text-lime-300">
+                <div className="border bg-black dark:bg-transparent border-lime-400 h-6 flex items-center justify-center rounded-2xl w-fit px-4 absolute top-[4.2rem] left-[6.9rem] transition-all duration-300 ease-in">
+                  <p className="text-[11px] font-medium text-lime-300 ">
                     Open to hire
                   </p>
                 </div>
               )}
-              <h1 className="font-medium text-xl text-neutral-300 mt-3">
+              <h1 className="font-medium text-xl dark:text-neutral-300 mt-3">
                 Muhammad Angga Adytya
               </h1>
-              <p className="text-xs font-medium text-neutral-400 mt-2">
+              <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 mt-2">
                 Frontend Developer
               </p>
 
               <div className="absolute top-0 right-0">
                 <div className="flex gap-x-2 w-full h-fit ">
                   <Link href={"/"}>
-                    <div className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center">
+                    <div className="dark:bg-neutral-700/50 bg-neutral-800 h-7 w-7 rounded-full flex items-center justify-center">
                       <PiHouseLight className="text-neutral-100" />
                     </div>
                   </Link>

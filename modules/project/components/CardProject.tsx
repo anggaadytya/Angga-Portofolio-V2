@@ -34,10 +34,10 @@ const CardProject = ({
         className="w-20 h-20 object-cover rounded-lg"
       />
       <div>
-        <h3 className="text-neutral-300 font-medium text-lg">
+        <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg">
           {title}
         </h3>
-        <p className="text-neutral-400 font-medium text-xs">
+        <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs">
           {description}
         </p>
         <div className="flex gap-2 py-2">

@@ -12,32 +12,30 @@ interface SocialLinks {
   href: string;
 }
 
-const textColor = "text-neutral-300";
-
 export const SocialLinks: SocialLinks[] = [
   {
     title: "Github",
-    icons: <SiGithub className={textColor} />,
+    icons: <SiGithub />,
     href: "https://github.com/anggaadytya",
   },
   {
     title: "Instagram",
-    icons: <SiInstagram className={textColor} />,
+    icons: <SiInstagram />,
     href: "https://www.instagram.com/angga_adytya/",
   },
   {
     title: "Discord",
-    icons: <SiDiscord className={textColor} />,
+    icons: <SiDiscord />,
     href: "https://discord.gg/pns2x7w4",
   },
   {
     title: "Linkedin",
-    icons: <SiLinkedin className={textColor} />,
+    icons: <SiLinkedin />,
     href: "https://www.linkedin.com/in/muhammad-angga-adytya/",
   },
   {
     title: "Twitter",
-    icons: <SiTwitter className={textColor} />,
+    icons: <SiTwitter />,
     href: "https://twitter.com/",
   },
 ];
@@ -53,13 +51,13 @@ export const WorkLinks: workLinks[] = [
   {
     title: "Web Developer Intern",
     place: "PT. Pertamina Hulu Rokan Zona 1 Field Rantau",
-    icons: <SiGithub className={textColor} />,
+    icons: <SiGithub />,
     date: "May - Agust 2022",
   },
   {
     title: "Engineer Intern",
     place: "Logica Kreasi Computer",
-    icons: <SiGithub className={textColor} />,
+    icons: <SiGithub />,
     date: "Jan - May 2018",
   },
 ];

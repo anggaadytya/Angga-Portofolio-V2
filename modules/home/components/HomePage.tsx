@@ -94,8 +94,8 @@ const HomePage = () => {
           className="fixed bottom-7 flex border border-neutral-600 rounded-lg p-2 gap-x-5 text-neutral-500"
         >
           <Link href={"/dashboard"} aria-label="Dashboard">
-            <span className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out">
-              <PiHouseLight className="text-neutral-900 dark:text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
+            <span className="bg-neutral-800 dark:bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out">
+              <PiHouseLight className=" text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
             </span>
           </Link>
           <ToggleTheme className="hover:scale-150 transition-all duration-300 ease-in-out" />

@@ -3,7 +3,7 @@ import { PiMagicWandThin, PiShapesThin } from "react-icons/pi";
 
 const Bio = () => {
   return (
-    <div className="w-full mt-5 text-neutral-300">
+    <div className="w-full mt-5 text-neutral-800 dark:text-neutral-300">
       <h2 className="font-bold my-4">Bio</h2>
       <p className="text-[12px] font-medium my-3">
         I am a Frontend Developer. I have 2 years of experience.
@@ -11,13 +11,13 @@ const Bio = () => {
       <div className="mt-6 flex justify-between text-sm">
         <div className="flex items-center gap-x-1">
           <PiShapesThin />
-          <span className="text-xs font-medium text-neutral-400">
+          <span className="text-xs font-medium dark:text-neutral-400 text-neutral-600">
             +2 years as a Frontend Developer
           </span>
         </div>
         <div className="flex items-center gap-x-1">
           <PiMagicWandThin />
-          <span className="text-xs font-medium text-neutral-400">7+ Projects</span>
+          <span className="text-xs font-medium dark:text-neutral-400 text-neutral-600">7+ Projects</span>
         </div>
       </div>
     </div>

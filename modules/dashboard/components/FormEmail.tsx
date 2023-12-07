@@ -42,7 +42,7 @@ const FormEmail = () => {
         onChange={handleEmail}
         type="text"
         placeholder="name@email.com"
-        className="w-36 focus:outline-none bg-transparent text-neutral-400 text-xs placeholder:text-neutral-600 h-full pt-2 placeholder:text-xs placeholder:font-medium"
+        className="w-36 focus:outline-none bg-transparent placeholder:dark:text-neutral-600 dark:text-neutral-400 text-xs placeholder:text-neutral-100 h-full pt-2 placeholder:text-xs placeholder:font-medium"
       />
       <motion.button
         animate={controls}

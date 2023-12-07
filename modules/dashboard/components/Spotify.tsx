@@ -13,11 +13,11 @@ const Spotify = () => {
           className="object-cover w-full h-full"
         />
       </div>
-      <h1 className="font-bold text-neutral-200 tracking-wider py-2">Pulang</h1>
+      <h1 className="font-bold dark:text-neutral-200 tracking-wider py-2">Pulang</h1>
       <div className="py-4 flex justify-around">
-        <h1 className="font-bold text-neutral-200">-</h1>
-        <h1 className="font-bold text-neutral-200">0</h1>
-        <h1 className="font-bold text-neutral-200">+</h1>
+        <h1 className="font-bold dark:text-neutral-200">-</h1>
+        <h1 className="font-bold dark:text-neutral-200">0</h1>
+        <h1 className="font-bold dark:text-neutral-200">+</h1>
       </div>
     </>
   );
