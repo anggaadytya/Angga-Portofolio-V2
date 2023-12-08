@@ -26,7 +26,9 @@ const ProjectDetail = ({
 }: ProjectPropsDetail) => {
   return (
     <div key={id} className="space-y-4 overflow-hidden">
-      <h1 className="text-xl font-bold text-neutral-300">{title}</h1>
+      <h1 className="text-xl font-bold dark:text-neutral-300 text-neutral-800">
+        {title}
+      </h1>
       <p className="text-xs font-medium text-neutral-400">{description}</p>
       <LineBreak />
       <Image
@@ -38,7 +40,7 @@ const ProjectDetail = ({
       />
       <div className="flex items-center flex-wrap justify-between">
         <div className="flex flex-wrap items-center gap-4 py-2">
-          <span className="leading-3 tracking-wide font-medium text-neutral-300">
+          <span className="leading-3 tracking-wide font-medium text-neutral-800 dark:text-neutral-300">
             Techs:
           </span>
           {techs?.map((stack: string, index: number) => (

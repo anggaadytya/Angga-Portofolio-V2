@@ -16,7 +16,10 @@ interface CardProjectProps {
 const Project = () => {
   return (
     <>
-      <TitleDashboard title="Project All" paragraf="Project" />
+      <TitleDashboard
+        title="Project All"
+        paragraf="displays the entire project that has been built"
+      />
       <LineBreak />
       {PROJECTS.map((project: CardProjectProps) => (
         <CardProject key={project.id} {...project} />
