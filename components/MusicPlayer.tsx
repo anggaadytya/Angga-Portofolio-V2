@@ -66,7 +66,7 @@ const MusicPlayer = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-x-3 justify-center items-center py-3">
+      <div className="flex gap-x-3 justify-around items-center py-3">
         <button onClick={prevSongHandler}>
           <IoPlayBack />
         </button>
