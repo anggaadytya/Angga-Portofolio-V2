@@ -6,7 +6,6 @@ import Feature from "@/modules/dashboard/components/Feature";
 
 import { motion } from "framer-motion";
 import SocialMedia from "@/modules/dashboard/components/SocialMedia";
-import Spotify from "@/modules/dashboard/components/Spotify";
 import MusicPlayer from "@/components/MusicPlayer";
 
 function RightPage() {
