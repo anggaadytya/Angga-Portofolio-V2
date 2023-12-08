@@ -4,8 +4,7 @@ import "./globals.css";
 import { Provider } from "@/hooks/Provider";
 import { Suspense } from "react";
 import Loading from "./loading";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
-
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === "development"
