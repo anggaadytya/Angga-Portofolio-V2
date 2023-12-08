@@ -22,7 +22,14 @@ const MusicPlayer = () => {
     if (audio) {
       audio.src = MUSIC[currentSongIndex].sound;
       if (isPlaying) {
-        audio.play();
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
+            });
+        }
       } else {
         audio.pause();
       }
