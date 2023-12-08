@@ -13,9 +13,11 @@ const Feature = () => {
           <PiGithubLogoLight className="group-hover:text-neutral-200" />
         </div>
         <h3 className="text-xs dark:text-neutral-300 font-medium group-hover:text-neutral-200">
-          Sispar Cabai by React
+          Certificate
           <br />
-          <span className="text-neutral-400 text-xs">React</span>
+          <span className="text-neutral-400 text-xs">
+            Muhammad Angga Adytya
+          </span>
         </h3>
       </div>
 
@@ -24,9 +26,11 @@ const Feature = () => {
           <PiGithubLogoLight className="group-hover:text-neutral-200" />
         </div>
         <h3 className="text-xs dark:text-neutral-300 font-medium group-hover:text-neutral-200">
-          Sispar Cabai by React
+          Education
           <br />
-          <span className="text-neutral-400 text-xs">React</span>
+          <span className="text-neutral-400 text-xs">
+            Muhammad Angga Adytya
+          </span>
         </h3>
       </div>
     </div>

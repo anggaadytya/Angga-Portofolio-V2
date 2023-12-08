@@ -74,6 +74,14 @@ const Dashboard = () => {
         />
         <SkillList />
       </div>
+      <LineBreak />
+      <div>
+        <TitleDashboard
+          title="About"
+          paragraf="A short story of me, not important but seem better than nothing."
+          icons={<FiCode />}
+        />
+      </div>
     </motion.main>
   );
 };

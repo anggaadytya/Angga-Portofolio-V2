@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "@/hooks/Provider";
 import { Suspense } from "react";
 import Loading from "./loading";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -38,6 +39,9 @@ export default function RootLayout({
         <Provider>
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </Provider>
+        <GoogleAnalytics
+          measurementId={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+        />
       </body>
     </html>
   );
