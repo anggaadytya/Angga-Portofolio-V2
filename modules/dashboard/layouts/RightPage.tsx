@@ -7,6 +7,7 @@ import Feature from "@/modules/dashboard/components/Feature";
 import { motion } from "framer-motion";
 import SocialMedia from "@/modules/dashboard/components/SocialMedia";
 import Spotify from "@/modules/dashboard/components/Spotify";
+import MusicPlayer from "@/components/MusicPlayer";
 
 function RightPage() {
   return (
@@ -34,7 +35,7 @@ function RightPage() {
         </div>
 
         <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 mt-3">
-          <Spotify />
+          <MusicPlayer />
         </div>
       </section>
     </motion.footer>

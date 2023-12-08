@@ -35,14 +35,14 @@ const FormEmail = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden"
+      className="dark:bg-[#282828] p-1 rounded-md md:flex justify-between h-10 w-full hidden shadow-sm shadow-neutral-800 dark:shadow-neutral-400"
     >
       <input
         value={email}
         onChange={handleEmail}
         type="text"
         placeholder="name@email.com"
-        className="w-36 focus:outline-none bg-transparent placeholder:dark:text-neutral-600 dark:text-neutral-400 text-xs placeholder:text-neutral-100 h-full pt-2 placeholder:text-xs placeholder:font-medium"
+        className="w-36 focus:outline-none bg-transparent placeholder:dark:text-neutral-400 text-xs placeholder:text-neutral-800 h-full placeholder:text-xs placeholder:font-medium"
       />
       <motion.button
         animate={controls}

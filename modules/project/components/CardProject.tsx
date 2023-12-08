@@ -24,17 +24,17 @@ const CardProject = ({
     <Link
       href={`/dashboard/project/${slug}`}
       key={id}
-      className="flex gap-x-4 items-center hover:bg-neutral-800 rounded-lg p-3 my-2 transition-all duration-200 ease-in-out cursor-pointer group relative"
+      className="flex items-center gap-x-4 hover:bg-neutral-800 rounded-lg p-3 my-4 transition-all duration-200 ease-in-out cursor-pointer group relative py-5  shadow-sm shadow-neutral-800 dark:shadow-neutral-400"
     >
       <Image
         src={image}
         alt={title}
         width={1000}
         height={1000}
-        className="w-20 h-20 object-cover rounded-lg"
+        className="w-24 h-24 object-cover rounded-lg"
       />
-      <div>
-        <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg">
+      <div className=" w-full h-full">
+        <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg group-hover:text-neutral-300">
           {title}
         </h3>
         <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs">
@@ -48,7 +48,7 @@ const CardProject = ({
           ))}
         </div>
       </div>
-      <div className="absolute right-2 group-hover:scale-125 group-hover:pr-3 transition-all duration-200 ease-in-out">
+      <div className="absolute right-2 group-hover:scale-125 group-hover:pr-3 group-hover:text-neutral-400 transition-all duration-200 ease-in-out">
         <svg
           className="w-5 h-5"
           fill="none"
