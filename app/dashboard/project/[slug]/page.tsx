@@ -6,8 +6,10 @@ import Image from "next/image";
 import { STACKS } from "@/constant/stacks";
 import { Tooltip } from "@nextui-org/react";
 import LineBreak from "@/components/LineBreak";
-import { Metadata } from "next";
+
 import { METADATA } from "@/constant/metadata";
+import ProjectLink from "@/modules/project/components/ProjectLink";
+import ProjectDetail from "@/modules/project/components/ProjectDetail";
 
 interface projectProps {
   params: { slug: string };
@@ -41,43 +43,7 @@ export default function Page({ params }: projectProps) {
     <>
       <Container>
         <BackButton />
-        {filter?.map((project) => (
-          <div key={project.id} className="space-y-4 overflow-hidden">
-            <h1 className="text-xl font-bold text-neutral-300">
-              {project.title}
-            </h1>
-            <p className="text-xs font-medium text-neutral-400">
-              {project.description}
-            </p>
-            <LineBreak />
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={1000}
-              height={1000}
-              className="hover:scale-105 transition-all duration-300"
-            />
-            <div className="flex items-center flex-wrap justify-between">
-              <div className="flex flex-wrap items-center gap-4 py-2">
-                <span className="leading-3 tracking-wide font-medium text-neutral-300">
-                  Techs:
-                </span>
-                {project.techs?.map((stack: string, index: number) => (
-                  <div key={index}>
-                    <Tooltip content={stack}>
-                      <div className="w-5">{STACKS[stack]}</div>
-                    </Tooltip>
-                  </div>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                <button>Source Code</button>
-                |
-                <button>Link Demo</button>
-              </div>
-            </div>
-          </div>
-        ))}
+        <ProjectDetail {...filter[0]} />
       </Container>
     </>
   );
