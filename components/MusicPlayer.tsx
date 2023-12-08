@@ -1,23 +1,22 @@
 import Image from "next/image";
-import React from "react";
-
+import React, { useRef, useState, useEffect } from "react";
 import {
   IoPlayCircle,
   IoPauseCircle,
   IoPlayBack,
   IoPlayForward,
 } from "react-icons/io5";
-
 import { MUSIC } from "@/constant/music";
 
 const size = "w-10 h-10";
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-  const [currentSongIndex, setCurrentSongIndex] = React.useState<number>(0);
-  const audioRef = React.useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
+  const [lastPlayedTime, setLastPlayedTime] = useState<number>(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
       audio.src = MUSIC[currentSongIndex].sound;
@@ -27,27 +26,41 @@ const MusicPlayer = () => {
           playPromise
             .then(() => {})
             .catch((error) => {
-              console.log(error);
+              console.error("Audio playback error:", error);
             });
+        }
+        if (lastPlayedTime !== 0) {
+          audio.currentTime = lastPlayedTime;
+          setLastPlayedTime(0);
         }
       } else {
         audio.pause();
       }
     }
-  }, [currentSongIndex, isPlaying]);
+  }, [currentSongIndex, isPlaying, lastPlayedTime]);
 
   const playPauseHandler = () => {
-    setIsPlaying(!isPlaying);
+    setIsPlaying((prevIsPlaying) => {
+      if (prevIsPlaying) {
+        const audio = audioRef.current;
+        if (audio) {
+          setLastPlayedTime(audio.currentTime);
+        }
+      }
+      return !prevIsPlaying;
+    });
   };
 
   const nextSongHandler = () => {
     const newIndex = (currentSongIndex + 1) % MUSIC.length;
     setCurrentSongIndex(newIndex);
+    setIsPlaying(true); // Untuk memastikan lagu berikutnya diputar setelah pergantian lagu
   };
 
   const prevSongHandler = () => {
     const newIndex = (currentSongIndex - 1 + MUSIC.length) % MUSIC.length;
     setCurrentSongIndex(newIndex);
+    setIsPlaying(true); // Untuk memastikan lagu sebelumnya diputar setelah pergantian lagu
   };
 
   const handleEnded = () => {
