@@ -1,20 +1,20 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PiHouseLight } from "react-icons/pi";
 import ToggleTheme from "../../../components/ToggleTheme";
-import WorkHistory from "../components/WorkHistory";
-import Bio from "../components/Bio";
-import SkillText from "../components/SkillText";
-import FormEmail from "../components/FormEmail";
+import WorkHistory from "../components/header/WorkHistory";
+import Bio from "../components/header/Bio";
+import SkillText from "../components/header/SkillText";
+import FormEmail from "../components/header/FormEmail";
 import LineBreak from "../../../components/LineBreak";
 import AvatarImage from "../../../components/AvatarImage";
+import { PROJECTS } from "../../../constant/projects";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);
-
+  const All_Projects = PROJECTS.length;
   return (
     <>
       <motion.header
@@ -66,7 +66,7 @@ function LeftPage() {
           <SkillText />
           <FormEmail />
           <LineBreak />
-          <Bio />
+          <Bio project={All_Projects} />
           <LineBreak />
           <WorkHistory />
         </section>

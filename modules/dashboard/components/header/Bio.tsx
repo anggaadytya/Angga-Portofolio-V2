@@ -1,7 +1,11 @@
 import React from "react";
 import { PiMagicWandThin, PiShapesThin } from "react-icons/pi";
 
-const Bio = () => {
+interface BioProps {
+  project: number;
+}
+
+const Bio = ({ project }: BioProps) => {
   return (
     <div className="w-full mt-5 text-neutral-800 dark:text-neutral-300">
       <h2 className="font-bold my-4">Bio</h2>
@@ -17,7 +21,9 @@ const Bio = () => {
         </div>
         <div className="flex items-center gap-x-1">
           <PiMagicWandThin />
-          <span className="text-xs font-medium dark:text-neutral-400 text-neutral-600">7+ Projects</span>
+          <span className="text-xs font-medium dark:text-neutral-400 text-neutral-600">
+            +{project} Projects
+          </span>
         </div>
       </div>
     </div>

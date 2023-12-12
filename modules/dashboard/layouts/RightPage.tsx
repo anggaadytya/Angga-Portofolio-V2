@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import LineBreak from "../../../components/LineBreak";
-import Resume from "@/modules/dashboard/components/Resume";
-import Feature from "@/modules/dashboard/components/Feature";
+import Resume from "@/modules/dashboard/components/footer/Resume";
+import Feature from "@/modules/dashboard/components/footer/Feature";
 
 import { motion } from "framer-motion";
-import SocialMedia from "@/modules/dashboard/components/SocialMedia";
+import SocialMedia from "@/modules/dashboard/components/footer/SocialMedia";
 import MusicPlayer from "@/components/MusicPlayer";
 
 function RightPage() {

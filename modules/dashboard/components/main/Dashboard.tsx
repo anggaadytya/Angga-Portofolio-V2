@@ -1,16 +1,14 @@
 "use client";
 import React, { lazy } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import TitleDashboard from "@/components/TitleDashboard";
 import LineBreak from "@/components/LineBreak";
 import { motion } from "framer-motion";
-import { FiBookmark, FiCode } from "react-icons/fi";
+import { FiBookmark, FiCode, FiBox } from "react-icons/fi";
 import { PROJECTS } from "@/constant/projects";
-import { STACKS } from "@/constant/stacks";
 import CardProject from "@/modules/project/components/CardProject";
 
-const SkillList = lazy(() => import("./SkillList"));
+const SkillList = lazy(() => import("../skills/SkillList"));
 
 const Dashboard = () => {
   const filter = PROJECTS.filter((project) => project?.is_show);
@@ -79,7 +77,7 @@ const Dashboard = () => {
         <TitleDashboard
           title="About"
           paragraf="A short story of me, not important but seem better than nothing."
-          icons={<FiCode />}
+          icons={<FiBox />}
         />
 
         <h3 className="text-sm md:text-md text-justify text-neutral-400 dark:text-neutral-400 py-3">
