@@ -37,7 +37,7 @@ const Dashboard = () => {
         </section>
       </div>
       <LineBreak />
-      <div className="">
+      <div>
         <TitleDashboard
           title="Projects"
           paragraf="Showcase my Project"
@@ -56,7 +56,7 @@ const Dashboard = () => {
         </div>
       </div>
       <LineBreak />
-      <div className="">
+      <div>
         <TitleDashboard
           title="Skills"
           paragraf="My Coding Skills"
@@ -100,4 +100,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default React.memo(Dashboard);
