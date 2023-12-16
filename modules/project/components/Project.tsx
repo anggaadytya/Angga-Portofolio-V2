@@ -3,6 +3,7 @@ import TitleDashboard from "@/components/TitleDashboard";
 import React from "react";
 import CardProject from "./CardProject";
 import { PROJECTS } from "@/constant/projects";
+import BackButton from "@/components/BackButton";
 
 interface CardProjectProps {
   id: number;

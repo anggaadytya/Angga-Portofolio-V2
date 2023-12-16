@@ -2,13 +2,9 @@ import React from "react";
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/constant/projects";
-import Image from "next/image";
-import { STACKS } from "@/constant/stacks";
-import { Tooltip } from "@nextui-org/react";
-import LineBreak from "@/components/LineBreak";
 
 import { METADATA } from "@/constant/metadata";
-import ProjectLink from "@/modules/project/components/ProjectLink";
+
 import ProjectDetail from "@/modules/project/components/ProjectDetail";
 
 interface projectProps {

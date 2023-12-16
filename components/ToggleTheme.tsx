@@ -19,7 +19,7 @@ export default function ToggleTheme({ className }: ToggleThemeProps) {
     <button
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="dark:bg-neutral-700/50 bg-neutral-800 h-7 w-7 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out"
+      className="dark:bg-neutral-700/50 bg-neutral-800 h-9 w-9 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out"
     >
       {theme === "light" ? (
         <PiSunLight className={`text-neutral-100 ${className}`} />

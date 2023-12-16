@@ -1,16 +1,14 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { PiHouseLight } from "react-icons/pi";
 import ToggleTheme from "../../../components/ToggleTheme";
 import WorkHistory from "../components/header/WorkHistory";
 import Bio from "../components/header/Bio";
 import SkillText from "../components/header/SkillText";
-import FormEmail from "../components/header/FormEmail";
 import LineBreak from "../../../components/LineBreak";
 import AvatarImage from "../../../components/AvatarImage";
 import { PROJECTS } from "../../../constant/projects";
+import HomeButton from "@/components/HomeButton";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -26,8 +24,8 @@ function LeftPage() {
         }}
         className=" md:block bg-neutral-100 dark:bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl shadow shadow-neutral-800 dark:shadow-neutral-400 p-3"
       >
-        <section className=" ">
-          <div className="flex ">
+        <section>
+          <div className="flex">
             <div className="w-full relative">
               <AvatarImage className="w-28 h-28" />
               <div
@@ -50,21 +48,13 @@ function LeftPage() {
 
               <div className="absolute top-0 right-0">
                 <div className="flex gap-x-2 w-full h-fit ">
-                  <Link href={"/"} aria-label="Home">
-                    <div className="dark:bg-neutral-700/50 bg-neutral-800 h-7 w-7 rounded-full flex items-center justify-center">
-                      <PiHouseLight className="text-neutral-100" />
-                    </div>
-                  </Link>
-                  <div>
-                    <ToggleTheme />
-                  </div>
+                  <HomeButton href="/" label="Home" />
+                  <ToggleTheme />
                 </div>
               </div>
             </div>
           </div>
-
           <SkillText />
-          <FormEmail />
           <LineBreak />
           <Bio project={All_Projects} />
           <LineBreak />

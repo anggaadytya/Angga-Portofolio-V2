@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import SocialMedia from "@/modules/dashboard/components/footer/SocialMedia";
 import MusicPlayer from "@/components/MusicPlayer";
 
+
 function RightPage() {
   return (
     <motion.footer
@@ -25,7 +26,7 @@ function RightPage() {
       className=" lg:block w-full lg:w-fit "
     >
       <section className="w-full md:w-60 rounded-2xl h-fit md:sticky top-5">
-        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 ">
+        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 mt-3">
           <Resume />
           <LineBreak />
           <Feature />
