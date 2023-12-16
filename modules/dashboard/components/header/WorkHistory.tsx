@@ -14,9 +14,9 @@ const WorkHistory = () => {
           <div className="flex gap-x-3">
             {link.icons}
             <div className="-mt-1">
-              <h3 className="text-sm font-medium text-neutral-800 dark:text-neutral-50">
+              <h2 className="text-sm font-medium text-neutral-800 dark:text-neutral-50">
                 {link.title}
-              </h3>
+              </h2>
               <p className="text-[9px] text-neutral-600 dark:text-neutral-400">
                 {link.place}
               </p>

@@ -87,17 +87,17 @@ const MusicPlayer = () => {
         </div>
       </div>
       <div className="flex gap-x-3 justify-around items-center py-3">
-        <button onClick={prevSongHandler}>
+        <button onClick={prevSongHandler} aria-label="Previous Song">
           <IoPlayBack />
         </button>
-        <button onClick={playPauseHandler}>
+        <button onClick={playPauseHandler} aria-label="Play/Pause">
           {isPlaying ? (
             <IoPauseCircle className={size} />
           ) : (
             <IoPlayCircle className={size} />
           )}
         </button>
-        <button onClick={nextSongHandler}>
+        <button onClick={nextSongHandler} aria-label="Next Song">
           <IoPlayForward />
         </button>
       </div>
