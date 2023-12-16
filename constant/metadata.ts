@@ -1,7 +1,8 @@
 export const METADATA = {
   creator: "Angga Adytya",
   description: "Personal website of Angga Adytya and Showcase my projects",
-  keyword: "anggaadytya, code, programming, javascript, typescript",
+  keyword:
+    "anggaadytya, personal website, code, programming, javascript, typescript",
   authors: {
     name: "Angga Adytya",
     url: process.env.DOMAIN,
