@@ -17,7 +17,7 @@ const SocialMedia = () => {
           <Link
             href={link.href}
             aria-label={link.title}
-            
+            target="_blank"
             className="hover:scale-125 transition-all duration-300 ease-in-out"
           >
             {link.icons}

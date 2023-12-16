@@ -50,7 +50,7 @@ function LeftPage() {
 
               <div className="absolute top-0 right-0">
                 <div className="flex gap-x-2 w-full h-fit ">
-                  <Link href={"/"}>
+                  <Link href={"/"} aria-label="Home">
                     <div className="dark:bg-neutral-700/50 bg-neutral-800 h-7 w-7 rounded-full flex items-center justify-center">
                       <PiHouseLight className="text-neutral-100" />
                     </div>
