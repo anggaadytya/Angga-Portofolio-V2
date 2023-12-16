@@ -41,4 +41,4 @@ function RightPage() {
   );
 }
 
-export default RightPage;
+export default React.memo(RightPage);
