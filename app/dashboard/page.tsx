@@ -7,7 +7,7 @@ import { METADATA } from "@/constant/metadata";
 export const metadata: Metadata = {
   title: `${METADATA.creator} | Dashboard`,
   alternates: {
-    canonical: process.env.DOMAIN,
+    canonical: `${process.env.DOMAIN}/dashboard`,
   },
 };
 
