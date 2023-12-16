@@ -9,13 +9,14 @@ interface MusicProps {
 export const MUSIC: MusicProps[] = [
   {
     id: 1,
-    title: "Jiwa Yang Bersedih",
-    artist: "Ghea Indrawari",
+    title: "Pulang",
+    artist: "For Revenge",
     image:
-      "https://res.cloudinary.com/ddugt5n5v/image/upload/v1702054437/Instagram_post_-_68_lfv8tw.svg",
+      "https://res.cloudinary.com/ddugt5n5v/image/upload/v1702054437/Instagram_post_-_71_psulrx.svg",
     sound:
-      "https://res.cloudinary.com/ddugt5n5v/video/upload/v1702000656/jiwaYangBersedih_dqeek9.mp3",
+      "https://res.cloudinary.com/ddugt5n5v/video/upload/v1702052340/y2mate.com_-_FOR_REVENGE_PULANG_Cover_by_DwiTanty_vs82ok.mp3",
   },
+ 
   {
     id: 2,
     title: "Selamat Ulang Tahun",
@@ -36,12 +37,12 @@ export const MUSIC: MusicProps[] = [
   },
   {
     id: 4,
-    title: "Pulang",
-    artist: "For Revenge",
+    title: "Jiwa Yang Bersedih",
+    artist: "Ghea Indrawari",
     image:
-      "https://res.cloudinary.com/ddugt5n5v/image/upload/v1702054437/Instagram_post_-_71_psulrx.svg",
+      "https://res.cloudinary.com/ddugt5n5v/image/upload/v1702054437/Instagram_post_-_68_lfv8tw.svg",
     sound:
-      "https://res.cloudinary.com/ddugt5n5v/video/upload/v1702052340/y2mate.com_-_FOR_REVENGE_PULANG_Cover_by_DwiTanty_vs82ok.mp3",
+      "https://res.cloudinary.com/ddugt5n5v/video/upload/v1702000656/jiwaYangBersedih_dqeek9.mp3",
   },
   {
     id: 5,
