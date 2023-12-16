@@ -4,7 +4,7 @@ import Link from "next/link";
 import TitleDashboard from "@/components/TitleDashboard";
 import LineBreak from "@/components/LineBreak";
 import { motion } from "framer-motion";
-import { FiBookmark, FiCode, FiBox } from "react-icons/fi";
+import { FiBookmark, FiCode, FiBox, FiPhone } from "react-icons/fi";
 import { PROJECTS } from "@/constant/projects";
 import CardProject from "@/modules/project/components/CardProject";
 
@@ -95,6 +95,15 @@ const Dashboard = () => {
           skills and dedication to the next level
         </h3>
       </div>
+      <LineBreak />
+      <div>
+        <TitleDashboard
+          title="Contact"
+          paragraf="Get in touch with me"
+          icons={<FiPhone />}
+        />
+      </div>
+
       <LineBreak />
     </motion.main>
   );
