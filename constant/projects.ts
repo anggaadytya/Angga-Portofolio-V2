@@ -84,7 +84,7 @@ export const PROJECTS: ProjectProps[] = [
       "https://res.cloudinary.com/ddugt5n5v/image/upload/v1701778542/kassApps_vuhymd.svg",
     link_demo: "https://kas-apps.vercel.app/",
     link_github: "https://github.com/anggaadytya/kasApps",
-    techs: ["Vite", "TailwindCSS", "JavaScript", "Vercel"],
+    techs: ["JavaScript", "Vite", "TailwindCSS", "Vercel"],
     is_show: false,
   },
   {

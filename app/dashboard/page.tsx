@@ -3,6 +3,7 @@ import Dashboard from "@/modules/dashboard";
 
 import { Metadata } from "next";
 import { METADATA } from "@/constant/metadata";
+import Container from "@/components/Container";
 
 export const metadata: Metadata = {
   title: `${METADATA.creator} | Dashboard`,
@@ -12,5 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <Dashboard />;
+  return (
+    <Container>
+      <Dashboard />
+    </Container>
+  );
 }

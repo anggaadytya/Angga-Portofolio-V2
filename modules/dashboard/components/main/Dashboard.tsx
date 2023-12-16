@@ -13,15 +13,7 @@ const SkillList = lazy(() => import("../skills/SkillList"));
 const Dashboard = () => {
   const filter = PROJECTS.filter((project) => project?.is_show);
   return (
-    <motion.main
-      initial={{ y: -20, opacity: 0 }}
-      animate={{
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.3, type: "spring", stiffness: 120 },
-      }}
-      className=" w-full md:w-[50%] h-fit md:sticky top-5 rounded-2xl bg-neutral-100 dark:bg-[#1c1c1c] p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 min-w-min"
-    >
+    <>
       <div>
         <section className="bg-cover bg-no-repeat space-y-2">
           <div className="flex justify-between items-center">
@@ -103,9 +95,8 @@ const Dashboard = () => {
           icons={<FiPhone />}
         />
       </div>
-
       <LineBreak />
-    </motion.main>
+    </>
   );
 };
 
