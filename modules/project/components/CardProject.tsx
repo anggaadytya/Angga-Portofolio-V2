@@ -38,7 +38,7 @@ const CardProject = ({
         <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg group-hover:text-neutral-300">
           {title}
         </h3>
-        <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs">
+        <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs pe-6">
           {description}
         </p>
         <div className="flex gap-2 py-2">

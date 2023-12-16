@@ -10,8 +10,8 @@ const nextConfig = {
             value: "require-corp",
           },
           {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin, max-age=31536000, immutable",
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
