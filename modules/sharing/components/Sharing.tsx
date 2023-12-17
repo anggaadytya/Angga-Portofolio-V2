@@ -2,18 +2,18 @@
 import LineBreak from "@/components/LineBreak";
 import TitleDashboard from "@/components/TitleDashboard";
 import Image from "next/image";
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 import { FiMessageCircle } from "react-icons/fi";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { useSharingStore } from "@/stores/sharingStore";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-interface Message {
-  id: number;
-  date: string;
+interface SharingSession {
+  id: string;
   image: string;
   sender: string;
   message: string;
+  date: string;
 }
 
 const LogOutButton = () => {
@@ -30,17 +30,17 @@ const LogOutButton = () => {
 
 const Sharing = () => {
   const { data: session } = useSession();
-  const [messages, setMessages] = React.useState<Message[]>([
+  const [messages, setMessages] = useState<SharingSession[]>([
     {
-      id: 1,
-      image: "https://avatars.githubusercontent.com/u/114200121?v=4",
-      sender: "Viranda Zaizafun",
-      date: "",
-      message: "hello my name is Viranda Zaizafun ",
+      id: "1",
+      image: "",
+      sender: "muhammad",
+      message: "halooo everyone",
+      date: "19/12/2023,12:00",
     },
   ]);
-  const [newMessage, setNewMessage] = React.useState<string>("");
-  const messagesEndRef = React.useRef<HTMLDivElement>(null);
+  const [newMessage, setNewMessage] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const hanldeMessage = () => {
     if (newMessage.trim() !== "") {
@@ -52,7 +52,7 @@ const Sharing = () => {
         minute: "numeric",
       });
       const newMSG = {
-        id: messages.length + 1,
+        id: session?.user?.email || "",
         image: session?.user?.image || "",
         sender: session?.user?.name || "",
         date: currentDate,
@@ -60,7 +60,6 @@ const Sharing = () => {
       };
       setMessages([...messages, newMSG]);
       setNewMessage("");
-      console.log({ newMSG });
     }
   };
 
@@ -77,7 +76,7 @@ const Sharing = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
@@ -144,7 +143,6 @@ const Sharing = () => {
       ) : (
         <button
           className="flex items-center justify-center gap-x-3 mt-4 bg-[#696969] h-9 w-full rounded-md text-xs font-medium text-neutral-50 tracking-wide transition-all"
-          // onClick={() => setLoading(true)}
           onClick={() => signIn("github")}
         >
           <FaGithub /> Login With Github

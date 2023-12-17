@@ -1,4 +1,4 @@
-import nextAuth from "next-auth";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubAuth from "next-auth/providers/github";
 
@@ -16,6 +16,6 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-const handler = nextAuth(authOptions);
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
