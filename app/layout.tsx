@@ -36,7 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Provider>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Suspense fallback={<Loading />}>
+            {children}
+            </Suspense>
         </Provider>
         <GoogleAnalytics
           measurementId={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
