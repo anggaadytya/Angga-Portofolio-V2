@@ -11,7 +11,7 @@ const Contact = () => {
         icons={<FiPhoneCall />}
       />
       <div className="w-full flex flex-col">
-        <h1>Or send me a message</h1>
+        <h1 className="text-sm font-medium">send me a message</h1>
         <form className="w-full flex flex-col gap-4 py-4">
           <input
             type="text"

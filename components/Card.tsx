@@ -18,7 +18,7 @@ const Card = ({ title, description, major, image, date }: AboutProps) => {
         initial={{ filter: "blur(20px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="h-24 w-28 bg-slate-600 rounded-md"
+        className="h-24 w-32 bg-slate-600 rounded-md"
       >
         <Image
           src={image}
