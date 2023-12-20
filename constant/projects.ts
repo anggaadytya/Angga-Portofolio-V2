@@ -20,7 +20,7 @@ export const PROJECTS: ProjectProps[] = [
       "https://res.cloudinary.com/ddugt5n5v/image/upload/v1702039342/Screenshot_2023-12-08_194138_cug2if.png",
     link_demo: "https://angga-project.vercel.app/",
     link_github: "https://github.com/anggaadytya/Angga-Project",
-    techs: ["Next.js", "TailwindCSS", "Framer Motion", "TypeScript", "Vercel"],
+    techs: ["TypeScript", "TailwindCSS", "Framer Motion", "Next.js", "Vercel"],
     is_show: true,
   },
   {

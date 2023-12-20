@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <Container>
-      <BackButton />
+      <BackButton url="/dashboard" />
       <Project/>
     </Container>
   );

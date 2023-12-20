@@ -65,4 +65,4 @@ function LeftPage() {
   );
 }
 
-export default React.memo(LeftPage);
+export default LeftPage;
