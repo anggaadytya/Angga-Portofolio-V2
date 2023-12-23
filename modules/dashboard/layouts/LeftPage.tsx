@@ -43,7 +43,7 @@ function LeftPage() {
                 Muhammad Angga Adytya
               </h1>
               <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 mt-2">
-                Frontend Developer
+                Frontend Developer | React Developer
               </p>
 
               <div className="absolute top-0 right-0">

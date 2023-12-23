@@ -1,8 +1,62 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import TitleDashboard from "@/components/TitleDashboard";
 import { FiPhoneCall } from "react-icons/fi";
+import { useSharingStore } from "@/stores/sharingStore";
+import { toast } from "react-toastify";
 
 const Contact = () => {
+  const { loading, setLoading } = useSharingStore();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleEmail = (e: any) => {
+    setLoading(true);
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_kjxef31",
+        "template_aaqj1ze",
+        e.target,
+        "M4Y6va-AgVOD0MGUT"
+      )
+      .then((Response) => {
+        console.log("Success", Response.status, Response.text);
+      })
+      .catch((err) => {
+        console.log("Failed", err);
+      })
+      .finally(() => {
+        setLoading(false);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        toast.success("Message sent successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      });
+  };
   return (
     <>
       <TitleDashboard
@@ -10,28 +64,38 @@ const Contact = () => {
         paragraf="If you have any questions or suggestions, feel free to contact me."
         icons={<FiPhoneCall />}
       />
-      <div className="w-full flex flex-col">
+      <div className="w-full flex flex-col transition-all duration-300 ease-in">
         <h1 className="text-sm font-medium">send me a message</h1>
-        <form className="w-full flex flex-col gap-4 py-4">
+        <form className="w-full  gap-4 py-4 grid" onSubmit={handleEmail}>
           <input
             type="text"
+            name="name"
             placeholder="Name"
-            className="h-9 rounded px-2 placeholder:text-sm outline-none"
+            value={formData.name}
+            onChange={handleInputChange}
+            className="h-9 rounded px-2 placeholder:text-sm outline-none col-span-2 md:col-span-1 border border-neutral-300 dark:border-neutral-600"
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
-            className="h-9 rounded px-2 placeholder:text-sm outline-none"
+            value={formData.email}
+            onChange={handleInputChange}
+            className="h-9 rounded px-2 placeholder:text-sm outline-none col-span-2 md:col-span-1 border border-neutral-300 dark:border-neutral-600"
           />
           <textarea
+            name="message"
             placeholder="Message"
-            className="rounded px-2 placeholder:text-sm outline-none"
+            value={formData.message}
+            onChange={handleInputChange}
+            className="rounded px-2 placeholder:text-sm outline-none col-span-2 border border-neutral-300 dark:border-neutral-600"
           ></textarea>
           <button
             type="submit"
-            className="bg-[#696969] h-9 p-1 rounded-md text-xs font-medium text-neutral-50"
+            value="Send"
+            className="bg-[#696969] h-9 p-1 rounded-md text-xs font-medium text-neutral-50 hover:bg-neutral-600 col-span-2"
           >
-            Send
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </div>

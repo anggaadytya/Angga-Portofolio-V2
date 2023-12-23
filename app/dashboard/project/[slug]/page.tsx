@@ -2,10 +2,11 @@ import React from "react";
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/constant/projects";
-
 import { METADATA } from "@/constant/metadata";
 
-import ProjectDetail from "@/modules/project/components/ProjectDetail";
+const Lazy = React.lazy(
+  () => import("@/modules/project/components/ProjectDetail")
+);
 
 interface projectProps {
   params: { slug: string };
@@ -39,7 +40,7 @@ export default function Page({ params }: projectProps) {
     <>
       <Container>
         <BackButton />
-        <ProjectDetail {...filter[0]} />
+        <Lazy {...filter[0]} />
       </Container>
     </>
   );

@@ -1,9 +1,9 @@
+import React from "react";
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { METADATA } from "@/constant/metadata";
-import Project from "@/modules/project";
 import { Metadata } from "next";
-import React from "react";
+const Lazy = React.lazy(() => import("@/modules/project"));
 
 export const metadata: Metadata = {
   title: `Project ${METADATA.exTitle}`,
@@ -18,7 +18,7 @@ export default function page() {
   return (
     <Container>
       <BackButton url="/dashboard" />
-      <Project/>
+      <Lazy />
     </Container>
   );
 }

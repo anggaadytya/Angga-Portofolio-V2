@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import SocialMedia from "@/modules/dashboard/components/footer/SocialMedia";
 import MusicPlayer from "@/components/MusicPlayer";
 
-
 function RightPage() {
   return (
     <motion.footer
