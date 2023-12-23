@@ -1,10 +1,10 @@
-import React from "react";
+import React, { lazy } from "react";
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/constant/projects";
 import { METADATA } from "@/constant/metadata";
 
-const Lazy = React.lazy(
+const Lazy = lazy(
   () => import("@/modules/project/components/ProjectDetail")
 );
 

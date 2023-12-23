@@ -1,9 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
 import BackButton from "@/components/BackButton";
 import Container from "@/components/Container";
 import { METADATA } from "@/constant/metadata";
 import { Metadata } from "next";
-const Lazy = React.lazy(() => import("@/modules/project"));
+const Lazy = lazy(() => import("@/modules/project"));
 
 export const metadata: Metadata = {
   title: `Project ${METADATA.exTitle}`,
