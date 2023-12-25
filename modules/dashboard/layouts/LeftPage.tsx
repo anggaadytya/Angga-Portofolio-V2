@@ -9,6 +9,7 @@ import LineBreak from "../../../components/LineBreak";
 import AvatarImage from "../../../components/AvatarImage";
 import { PROJECTS } from "../../../constant/projects";
 import HomeButton from "@/components/HomeButton";
+import CommandButton from "@/components/CommandButton";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -50,6 +51,7 @@ function LeftPage() {
                 <div className="flex gap-x-2 w-full h-fit ">
                   <HomeButton href="/" label="Home" />
                   <ToggleTheme />
+                  <CommandButton/>
                 </div>
               </div>
             </div>

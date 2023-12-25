@@ -5,6 +5,7 @@ import { Provider } from "@/hooks/Provider";
 import { Suspense } from "react";
 import Loading from "./loading";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === "development"
@@ -34,11 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="scrollbar-hide">
         <Provider>
-          <Suspense fallback={<Loading />}>
-            {children}
-            </Suspense>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </Provider>
         <GoogleAnalytics
           measurementId={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}

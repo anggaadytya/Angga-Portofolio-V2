@@ -1,5 +1,5 @@
 {
-  "name": "angga-slicing",
+  "name": "angga-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,9 +14,11 @@
     "@emailjs/browser": "^3.11.0",
     "@nextui-org/react": "^2.2.9",
     "@supabase/supabase-js": "^2.39.1",
+    "@testing-library/jest-dom": "^6.1.5",
     "framer-motion": "^10.16.12",
     "next": "14.0.3",
     "next-auth": "^4.24.5",
+    "next-seo": "^6.4.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
@@ -25,6 +27,7 @@
     "react-toastify": "^9.1.3",
     "react-type-animation": "^3.2.0",
     "supabase": "^1.123.4",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^9.0.1",
     "zustand": "^4.4.7"
   },

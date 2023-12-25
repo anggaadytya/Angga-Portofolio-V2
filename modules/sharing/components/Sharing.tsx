@@ -109,7 +109,7 @@ const Sharing = () => {
       />
       <LineBreak />
       <div
-        className={`overflow-y-auto h-[30rem] scroll-smooth transition-all duration-300 ease-in-out ${
+        className={`overflow-y-auto h-[30rem] scroll-smooth transition-all duration-300 ease-in-out scrollbar-hide  ${
           session ? "" : "blur-sm"
         } `}
       >

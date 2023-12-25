@@ -5,7 +5,7 @@ import React from "react";
 import { FiCpu } from "react-icons/fi";
 
 const Certificate = () => {
-  const FILTER = CERTIF.slice(0, 4);
+  const FILTER = CERTIF.slice(0, 9);
   return (
     <>
       <TitleDashboard

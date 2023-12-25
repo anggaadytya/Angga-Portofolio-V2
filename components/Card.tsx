@@ -2,12 +2,13 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaQuestion } from "react-icons/fa";
 
 interface AboutProps {
   title: string;
   description: string;
   major?: string;
-  image: string;
+  image?: string;
   date?: string;
 }
 
@@ -20,13 +21,19 @@ const Card = ({ title, description, major, image, date }: AboutProps) => {
         transition={{ duration: 1 }}
         className="h-24 w-32  rounded-md"
       >
-        <Image
-          src={image}
-          alt={title}
-          width={1000}
-          height={1000}
-          className="rounded-md w-full h-full object-cover"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            width={1000}
+            height={1000}
+            className="rounded-md w-full h-full object-cover"
+          />
+        ) : (
+          <div className="flex justify-center items-center h-full">
+            <FaQuestion size={50} />
+          </div>
+        )}
       </motion.div>
       <div className="w-full">
         <h1 className="font-bold text-sm md:text-base">{title}</h1>
