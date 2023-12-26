@@ -50,8 +50,8 @@ function LeftPage() {
               <div className="absolute top-0 right-0">
                 <div className="flex gap-x-2 w-full h-fit ">
                   <HomeButton href="/" label="Home" />
-                  <ToggleTheme />
-                  <CommandButton/>
+                  <ToggleTheme className="text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
+                  <CommandButton />
                 </div>
               </div>
             </div>
