@@ -7,8 +7,10 @@ import Feature from "@/modules/dashboard/components/footer/Feature";
 import { motion } from "framer-motion";
 import SocialMedia from "@/modules/dashboard/components/footer/SocialMedia";
 import MusicPlayer from "@/components/MusicPlayer";
+import { useCommandStore } from "@/stores/sharingStore";
 
 function RightPage() {
+  const { open } = useCommandStore();
   return (
     <motion.footer
       initial={{ y: 10, opacity: 0 }}
@@ -22,7 +24,7 @@ function RightPage() {
           stiffness: 200,
         },
       }}
-      className=" lg:block w-full lg:w-fit -z-10 "
+      className={`lg:block w-full lg:w-fit ${open ? "-z-10" : "z-0"} `}
     >
       <section className="w-full md:w-60 rounded-2xl h-fit md:sticky top-5">
         <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 ">

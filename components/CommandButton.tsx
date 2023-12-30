@@ -1,18 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
+import { useCommandStore } from "@/stores/sharingStore";
 
 const CommandButton = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { open, setOpen } = useCommandStore();
   const redDivRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpen = () => {
-    setIsOpen(!isOpen);
+    setOpen(!open);
   };
 
   const handleClickOutside = (event: any) => {
     if (redDivRef.current && !redDivRef.current.contains(event.target)) {
-      setIsOpen(false);
+      setOpen(false);
     }
   };
 
@@ -21,7 +22,7 @@ const CommandButton = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  });
 
   return (
     <>
@@ -30,8 +31,10 @@ const CommandButton = () => {
           <MdKeyboardCommandKey className="text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
         </span>
       </button>
-      {isOpen && (
-        <div className="h-screen w-screen fixed top-0 left-0 flex items-center justify-center bg-neutral-800/70 ">
+      {open && (
+        <div
+          className={`h-screen w-screen fixed top-0 left-0 flex items-center justify-center bg-neutral-800/70`}
+        >
           <div
             ref={redDivRef}
             className="h-min w-full md:w-[35rem] flex items-center rounded-md "
