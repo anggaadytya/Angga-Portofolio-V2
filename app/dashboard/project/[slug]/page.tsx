@@ -16,14 +16,7 @@ export function generateMetadata({ params }: projectProps) {
     title: filter[0].title,
     description: filter[0].description,
     openGraph: {
-      images: (filter[0].image as unknown as string[]).map(
-        (imageUrl: string) => ({
-          url: imageUrl,
-          width: 600,
-          height: 600,
-          alt: filter[0].title,
-        })
-      ),
+      images: filter[0].image,
       url: `${METADATA.openGraph.url}/dashboard/project/${filter[0].slug}`,
       siteName: METADATA.openGraph.siteName,
       locale: METADATA.openGraph.locale,
