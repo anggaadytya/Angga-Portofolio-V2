@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useCommandStore } from "@/stores/sharingStore";
+import { SocialLinks } from "@/constant/index";
 
 const CommandButton = () => {
   const { open, setOpen } = useCommandStore();
@@ -17,12 +18,21 @@ const CommandButton = () => {
     }
   };
 
+  const handleEscKey = (event: KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      setOpen(false);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscKey);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
     };
-  });
+  }, []);
 
   return (
     <>
@@ -37,7 +47,7 @@ const CommandButton = () => {
         >
           <div
             ref={redDivRef}
-            className="h-min w-full md:w-[35rem] flex items-center rounded-md "
+            className="h-min w-[95%] md:w-[35rem] flex items-center rounded-md "
           >
             <div className="bg-neutral-100 dark:bg-neutral-800 w-full rounded-md border border-neutral-400">
               <div className="flex items-center border-b border-neutral-400 px-4">
@@ -50,14 +60,74 @@ const CommandButton = () => {
                   placeholder="Search..."
                   className="w-full border rounded-md px-2 py-3 focus:outline-none placeholder:outline-none border-none bg-neutral-100 dark:bg-neutral-800"
                 />
-                <h1 className="rounded-md bg-[#696969] h-8 w-12 flex items-center justify-center text-neutral-50">
+                <span className="rounded-md bg-[#696969] h-8 w-14 flex items-center justify-center text-neutral-50">
                   esc
-                </h1>
+                </span>
               </div>
-              <section className="h-[10rem] flex flex-col items-center justify-center">
+              {/* <section className="h-[10rem] flex flex-col items-center justify-center">
                 <h1 className="text-neutral-700 dark:text-neutral-400">
                   No recent searches
                 </h1>
+              </section> */}
+              <section className="h-[10rem] flex flex-col py-4 overflow-y-auto ">
+                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider">
+                  PAGES
+                </h1>
+                <div className="flex flex-col gap-4 mt-3">
+                  <div className="flex items-center justify-between px-4">
+                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                      Home
+                    </h1>
+                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                      Pages
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between px-4">
+                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                      Project
+                    </h1>
+                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                      Pages
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between px-4">
+                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                      About
+                    </h1>
+                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                      Pages
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between px-4">
+                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                      Skill
+                    </h1>
+                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                      Pages
+                    </span>
+                  </div>
+                </div>
+                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider mt-3">
+                  SOCIAL
+                </h1>
+                <div className="flex flex-col gap-4 mt-3">
+                  {SocialLinks.map((link, index) => (
+                    <div
+                      className="flex items-center justify-between px-4"
+                      key={index}
+                    >
+                      <div className="flex items-center gap-x-2">
+                        {link.icons}
+                        <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                          {link.title}
+                        </h1>
+                      </div>
+                      <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                        Link
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </section>
             </div>
           </div>
