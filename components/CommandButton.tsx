@@ -3,6 +3,7 @@ import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useCommandStore } from "@/stores/sharingStore";
 import { SocialLinks } from "@/constant/index";
+import Link from "next/link";
 
 const CommandButton = () => {
   const { open, setOpen } = useCommandStore();
@@ -73,8 +74,8 @@ const CommandButton = () => {
                 <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider">
                   PAGES
                 </h1>
-                <div className="flex flex-col gap-4 mt-3">
-                  <div className="flex items-center justify-between px-4">
+                <div className="flex flex-col gap-2 mt-2">
+                  <div className="flex items-center justify-between px-4 py-1">
                     <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                       Home
                     </h1>
@@ -82,7 +83,7 @@ const CommandButton = () => {
                       Pages
                     </span>
                   </div>
-                  <div className="flex items-center justify-between px-4">
+                  <div className="flex items-center justify-between px-4 py-1">
                     <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                       Project
                     </h1>
@@ -90,7 +91,7 @@ const CommandButton = () => {
                       Pages
                     </span>
                   </div>
-                  <div className="flex items-center justify-between px-4">
+                  <div className="flex items-center justify-between px-4 py-1">
                     <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                       About
                     </h1>
@@ -98,7 +99,7 @@ const CommandButton = () => {
                       Pages
                     </span>
                   </div>
-                  <div className="flex items-center justify-between px-4">
+                  <div className="flex items-center justify-between px-4 py-1">
                     <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                       Skill
                     </h1>
@@ -107,13 +108,14 @@ const CommandButton = () => {
                     </span>
                   </div>
                 </div>
-                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider mt-3">
+                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider mt-5">
                   SOCIAL
                 </h1>
-                <div className="flex flex-col gap-4 mt-3">
+                <div className="flex flex-col gap-2 mt-2">
                   {SocialLinks.map((link, index) => (
-                    <div
-                      className="flex items-center justify-between px-4"
+                    <Link
+                      href={link.href}
+                      className="flex items-center justify-between py-1 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
                       key={index}
                     >
                       <div className="flex items-center gap-x-2">
@@ -125,7 +127,7 @@ const CommandButton = () => {
                       <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
                         Link
                       </span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </section>
