@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useCommandStore } from "@/stores/sharingStore";
-import { SocialLinks } from "@/constant/index";
+import { SocialLinks, MenuLinks } from "@/constant/index";
 import Link from "next/link";
 
 const CommandButton = () => {
   const { open, setOpen } = useCommandStore();
   const redDivRef = useRef<HTMLDivElement | null>(null);
+  const [searchInput, setSearchInput] = useState<string>("");
 
   const handleOpen = () => {
     setOpen(!open);
@@ -25,6 +26,10 @@ const CommandButton = () => {
     }
   };
 
+  const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEscKey);
@@ -34,6 +39,13 @@ const CommandButton = () => {
       document.removeEventListener("keydown", handleEscKey);
     };
   }, []);
+
+  const filterLinks = [...MenuLinks, ...SocialLinks].filter((link) =>
+    link.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
+  const pagesLinks = filterLinks.filter((link) => link.menu === "Pages");
+  const socialLinks = filterLinks.filter((link) => link.menu === "Link");
 
   return (
     <>
@@ -59,77 +71,74 @@ const CommandButton = () => {
                 <input
                   type="text"
                   placeholder="Search..."
+                  onChange={handleSearchInput}
                   className="w-full border rounded-md px-2 py-3 focus:outline-none placeholder:outline-none border-none bg-neutral-100 dark:bg-neutral-800"
                 />
                 <span className="rounded-md bg-[#696969] h-8 w-14 flex items-center justify-center text-neutral-50">
                   esc
                 </span>
               </div>
-              {/* <section className="h-[10rem] flex flex-col items-center justify-center">
-                <h1 className="text-neutral-700 dark:text-neutral-400">
-                  No recent searches
-                </h1>
-              </section> */}
-              <section className="h-[10rem] flex flex-col py-4 overflow-y-auto ">
-                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider">
-                  PAGES
-                </h1>
-                <div className="flex flex-col gap-2 mt-2">
-                  <div className="flex items-center justify-between px-4 py-1">
-                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
-                      Home
+
+              <section className="h-[15rem] flex flex-col py-4 overflow-y-auto scrollbar-hide">
+
+                {pagesLinks.length > 0 && (
+                  <>
+                    <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider">
+                      PAGES
                     </h1>
-                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
-                      Pages
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between px-4 py-1">
-                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
-                      Project
+                    {pagesLinks.map((link, index) => (
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        key={index}
+                      >
+                        <div className="flex items-center gap-x-2">
+                          {link.icons ? link.icons : null}
+                          <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                            {link.title}
+                          </h1>
+                        </div>
+                        <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                          {link.menu}
+                        </span>
+                      </Link>
+                    ))}
+                  </>
+                )}
+
+                {socialLinks.length > 0 && (
+                  <>
+                    <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider pt-4">
+                      SOCIAL
                     </h1>
-                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
-                      Pages
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between px-4 py-1">
-                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
-                      About
+                    {socialLinks.map((link, index) => (
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        key={index}
+                      >
+                        <div className="flex items-center gap-x-2">
+                          {link.icons ? link.icons : null}
+                          <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                            {link.title}
+                          </h1>
+                        </div>
+                        <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                          {link.menu}
+                        </span>
+                      </Link>
+                    ))}
+                  </>
+                )}
+
+                {filterLinks.length === 0 && (
+                  <section className="h-[15rem] flex flex-col items-center justify-center">
+                    <h1 className="text-neutral-700 dark:text-neutral-400">
+                      No recent searches
                     </h1>
-                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
-                      Pages
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between px-4 py-1">
-                    <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
-                      Skill
-                    </h1>
-                    <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
-                      Pages
-                    </span>
-                  </div>
-                </div>
-                <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider mt-5">
-                  SOCIAL
-                </h1>
-                <div className="flex flex-col gap-2 mt-2">
-                  {SocialLinks.map((link, index) => (
-                    <Link
-                      href={link.href}
-                      className="flex items-center justify-between py-1 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
-                      key={index}
-                    >
-                      <div className="flex items-center gap-x-2">
-                        {link.icons}
-                        <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
-                          {link.title}
-                        </h1>
-                      </div>
-                      <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
-                        Link
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+                  </section>
+                )}
+                
               </section>
             </div>
           </div>

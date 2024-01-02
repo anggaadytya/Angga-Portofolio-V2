@@ -4,6 +4,7 @@ import React from "react";
 import CardProject from "./CardProject";
 import { PROJECTS } from "@/constant/projects";
 import BackButton from "@/components/BackButton";
+import { FiCpu } from "react-icons/fi";
 
 interface CardProjectProps {
   id: number;
@@ -19,6 +20,7 @@ const Project = () => {
     <>
       <TitleDashboard
         title="Project All"
+        icons={<FiCpu />}
         paragraf="displays the entire project that has been built"
       />
       <LineBreak />
