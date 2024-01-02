@@ -6,7 +6,14 @@ import {
   SiTwitter,
 } from "react-icons/si";
 import { PiHouseLight } from "react-icons/pi";
-import { FiBox, FiCpu, FiMessageCircle  } from "react-icons/fi";
+import {
+  FiBox,
+  FiCpu,
+  FiDatabase,
+  FiGrid,
+  FiMessageCircle,
+} from "react-icons/fi";
+import { GrAnalytics } from "react-icons/gr";
 
 interface SocialLinks {
   toLowerCase(): unknown;
@@ -14,6 +21,8 @@ interface SocialLinks {
   icons: JSX.Element;
   href: string;
   menu: string;
+  feature?: boolean;
+  externalLink?: boolean;
 }
 
 export const SocialLinks: SocialLinks[] = [
@@ -78,10 +87,20 @@ export const MenuLinks: SocialLinks[] = [
     toLowerCase() {
       return "";
     },
+    title: "Dashboard",
+    icons: <FiGrid />,
+    href: "/dashboard",
+    menu: "Pages",
+  },
+  {
+    toLowerCase() {
+      return "";
+    },
     title: "About",
     icons: <FiBox />,
     href: "/dashboard/about",
     menu: "Pages",
+    feature: true,
   },
   {
     toLowerCase() {
@@ -100,6 +119,30 @@ export const MenuLinks: SocialLinks[] = [
     icons: <FiMessageCircle />,
     href: "/dashboard/sharing",
     menu: "Pages",
+    feature: true,
+  },
+];
+
+export const AnalyticsLink: SocialLinks[] = [
+  {
+    toLowerCase() {
+      return "";
+    },
+    title: "Google Analytics",
+    icons: <GrAnalytics />,
+    href: "https://github.com/anggaadytya",
+    menu: "Links",
+    externalLink: true,
+  },
+  {
+    toLowerCase() {
+      return "";
+    },
+    title: "PageSpeed Insights",
+    icons: <FiDatabase />,
+    href: "https://github.com/anggaadytya",
+    menu: "Links",
+    externalLink: true,
   },
 ];
 

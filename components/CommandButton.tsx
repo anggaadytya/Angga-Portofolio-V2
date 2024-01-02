@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useCommandStore } from "@/stores/sharingStore";
-import { SocialLinks, MenuLinks } from "@/constant/index";
+import { SocialLinks, MenuLinks, AnalyticsLink } from "@/constant/index";
 import Link from "next/link";
 
 const CommandButton = () => {
@@ -40,12 +40,15 @@ const CommandButton = () => {
     };
   }, []);
 
-  const filterLinks = [...MenuLinks, ...SocialLinks].filter((link) =>
-    link.title.toLowerCase().includes(searchInput.toLowerCase())
+  const filterLinks = [...MenuLinks, ...SocialLinks, ...AnalyticsLink].filter(
+    (link) => link.title.toLowerCase().includes(searchInput.toLowerCase())
   );
 
   const pagesLinks = filterLinks.filter((link) => link.menu === "Pages");
   const socialLinks = filterLinks.filter((link) => link.menu === "Link");
+  const analyticLinks = filterLinks.filter(
+    (link) => link.externalLink === true
+  );
 
   return (
     <>
@@ -80,7 +83,6 @@ const CommandButton = () => {
               </div>
 
               <section className="h-[15rem] flex flex-col py-4 overflow-y-auto scrollbar-hide">
-
                 {pagesLinks.length > 0 && (
                   <>
                     <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider">
@@ -131,6 +133,31 @@ const CommandButton = () => {
                   </>
                 )}
 
+                {analyticLinks.length > 0 && (
+                  <>
+                    <h1 className="px-4 text-neutral-700 dark:text-neutral-400 tracking-wider pt-4">
+                      ANALYTICS
+                    </h1>
+                    {analyticLinks.map((link, index) => (
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        key={index}
+                      >
+                        <div className="flex items-center gap-x-2">
+                          {link.icons ? link.icons : null}
+                          <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
+                            {link.title}
+                          </h1>
+                        </div>
+                        <span className="rounded-md bg-[#696969] h-7 w-12 flex items-center justify-center text-neutral-50 text-xs">
+                          {link.menu}
+                        </span>
+                      </Link>
+                    ))}
+                  </>
+                )}
+
                 {filterLinks.length === 0 && (
                   <section className="h-[15rem] flex flex-col items-center justify-center">
                     <h1 className="text-neutral-700 dark:text-neutral-400">
@@ -138,7 +165,6 @@ const CommandButton = () => {
                     </h1>
                   </section>
                 )}
-                
               </section>
             </div>
           </div>
