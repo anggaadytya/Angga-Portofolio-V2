@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import ToggleTheme from "../../../components/ToggleTheme";
 import WorkHistory from "../components/header/WorkHistory";
@@ -10,10 +10,20 @@ import AvatarImage from "../../../components/AvatarImage";
 import { PROJECTS } from "../../../constant/projects";
 import HomeButton from "@/components/HomeButton";
 import CommandButton from "@/components/CommandButton";
+import createDrivers from "@/libs/driver";
+import { tourGuideWEB } from "@/constant/driver";
 
 function LeftPage() {
   const [open, setOpen] = React.useState<boolean>(false);
   const All_Projects = PROJECTS.length;
+
+  const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
+
+  useEffect(() => {
+    if (isProductTour) {
+      runDriver();
+    }
+  })
   return (
     <>
       <motion.header

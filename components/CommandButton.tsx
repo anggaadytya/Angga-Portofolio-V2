@@ -26,6 +26,18 @@ const CommandButton = () => {
     }
   };
 
+  const handleKeyPress = (event: KeyboardEvent) => {
+    if (event.ctrlKey && event.key === "k") {
+      event.preventDefault();
+
+      setOpen(true);
+    }
+  };
+
+  const handleCloseCommand = () => {
+    setOpen(false);
+  };
+
   const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(event.target.value);
   };
@@ -33,10 +45,12 @@ const CommandButton = () => {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEscKey);
+    document.addEventListener("keydown", handleKeyPress);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
 
@@ -52,7 +66,7 @@ const CommandButton = () => {
 
   return (
     <>
-      <button aria-label={""} onClick={handleOpen}>
+      <button id="command-button" aria-label={""} onClick={handleOpen}>
         <span className="bg-neutral-800 dark:bg-neutral-700/50 h-9 w-9 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out">
           <MdKeyboardCommandKey className="text-neutral-100 hover:scale-150 transition-all duration-300 ease-in-out" />
         </span>
@@ -93,6 +107,7 @@ const CommandButton = () => {
                         href={link.href}
                         className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
                         key={index}
+                        onClick={handleCloseCommand}
                       >
                         <div className="flex items-center gap-x-2">
                           {link.icons ? link.icons : null}
@@ -118,6 +133,7 @@ const CommandButton = () => {
                         href={link.href}
                         className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
                         key={index}
+                        onClick={handleCloseCommand}
                       >
                         <div className="flex items-center gap-x-2">
                           {link.icons ? link.icons : null}
@@ -143,6 +159,7 @@ const CommandButton = () => {
                         href={link.href}
                         className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
                         key={index}
+                        onClick={handleCloseCommand}
                       >
                         <div className="flex items-center gap-x-2">
                           {link.icons ? link.icons : null}
