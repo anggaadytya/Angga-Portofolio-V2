@@ -26,9 +26,7 @@ function LeftPage() {
     )[0] as HTMLButtonElement;
     const dialogTitle = document.getElementById("driver-popover-title");
 
-    if (isProductTour) {
-      runDriver();
-    }
+  
     if (typeof document !== "undefined") {
       if (dialogElement) {
         dialogElement.setAttribute("aria-labelledby", "driver-popover-title");
@@ -44,6 +42,10 @@ function LeftPage() {
       if (dialogTitle) {
         dialogTitle.textContent = "Dark Mode Switcher";
       }
+    }
+
+    if (isProductTour) {
+      runDriver();
     }
   });
 

@@ -1,6 +1,4 @@
 import React from "react";
-import { PiGoogleLogoThin } from "react-icons/pi";
-import { SiAdobe } from "react-icons/si";
 import { WorkLinks } from "@/constant";
 
 const WorkHistory = () => {
@@ -10,21 +8,23 @@ const WorkHistory = () => {
         Work History
       </h1>
       {WorkLinks.map((link) => (
-        <div key={link.title} className="mt-7 my-4 flex justify-between">
-          <div className="flex gap-x-3">
-            {link.icons}
-            <div className="-mt-1">
-              <h2 className="text-sm font-medium text-neutral-800 dark:text-neutral-50">
-                {link.title}
-              </h2>
-              <p className="text-[9px] text-neutral-600 dark:text-neutral-400">
-                {link.place}
-              </p>
+        <div key={link.title} className="mt-7 my-4">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between -mt-1">
+              <div className="flex items-center gap-x-1">
+                {link.icons}
+                <h2 className="text-sm font-medium text-neutral-800 dark:text-neutral-50">
+                  {link.title}
+                </h2>
+              </div>
+              <small className="text-[9px] text-neutral-600 dark:text-neutral-400">
+                {link.date}
+              </small>
             </div>
+            <p className="text-[9px] text-neutral-600 dark:text-neutral-400">
+              {link.place}
+            </p>
           </div>
-          <small className="text-[9px] text-neutral-600 dark:text-neutral-400">
-            {link.date}
-          </small>
         </div>
       ))}
     </div>

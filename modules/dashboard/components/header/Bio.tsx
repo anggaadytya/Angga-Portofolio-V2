@@ -16,7 +16,7 @@ const Bio = ({ project }: BioProps) => {
         <div className="flex items-center gap-x-1">
           <PiShapesThin />
           <span className="text-xs font-medium dark:text-neutral-400 text-neutral-600">
-            +2 years as a Frontend Developer
+            +2 years as a Frontend
           </span>
         </div>
         <div className="flex items-center gap-x-1">
