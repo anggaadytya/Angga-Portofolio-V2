@@ -8,6 +8,7 @@ interface CreateDriversProps {
 export default function createDrivers({ steps }: CreateDriversProps) {
   let isProductTour = false;
   const driverObj = driver({
+    showButtons: ["next", "previous"],
     showProgress: true,
     animate: true,
     steps,
@@ -23,8 +24,4 @@ export default function createDrivers({ steps }: CreateDriversProps) {
   }
 
   return { runDriver, isProductTour };
- 
-
 }
-
-
