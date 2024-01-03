@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: `${METADATA.creator} | Dashboard`,
+  title: `${METADATA.creator} | About`,
   alternates: {
     canonical: `${process.env.DOMAIN}/dashboard/about`,
   },

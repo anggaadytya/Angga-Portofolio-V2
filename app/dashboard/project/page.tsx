@@ -6,7 +6,7 @@ import { Metadata } from "next";
 const Lazy = lazy(() => import("@/modules/project"));
 
 export const metadata: Metadata = {
-  title: `Project ${METADATA.exTitle}`,
+  title: `${METADATA.creator} | Project`,
   description: "Project All Showing Page",
   keywords: "portofolio frontend developer",
   alternates: {
