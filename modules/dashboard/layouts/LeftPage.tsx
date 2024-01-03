@@ -43,7 +43,15 @@ function LeftPage() {
     if (dialogTitle) {
       dialogTitle.textContent = "Dark Mode Switcher";
     }
-  });
+  }, [
+    isProductTour,
+    dialogElement,
+    closeButton,
+    commandButton,
+    dialogTitle,
+    runDriver,
+  ]);
+
   return (
     <>
       <motion.header

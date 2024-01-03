@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+"use client";
+import { useEffect, useRef, useState } from "react";
 import { MdKeyboardCommandKey } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { useCommandStore } from "@/stores/sharingStore";
@@ -43,15 +44,17 @@ const CommandButton = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscKey);
-    document.addEventListener("keydown", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscKey);
-      document.removeEventListener("keydown", handleKeyPress);
-    };
+    if (typeof window !== 'undefined') {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscKey);
+      document.addEventListener("keydown", handleKeyPress);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("keydown", handleEscKey);
+        document.removeEventListener("keydown", handleKeyPress);
+      };
+    }
   }, []);
 
   const filterLinks = [...MenuLinks, ...SocialLinks, ...AnalyticsLink].filter(
