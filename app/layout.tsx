@@ -22,11 +22,28 @@ export const metadata: Metadata = {
     url: METADATA.authors.url,
   },
   openGraph: {
-    images: "https://avatars.githubusercontent.com/u/114200420?v=4",
+    // images: "https://avatars.githubusercontent.com/u/114200420?v=4",
     url: METADATA.openGraph.url,
     siteName: METADATA.openGraph.siteName,
     locale: METADATA.openGraph.locale,
     type: "website",
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        width: 1600,
+        height: 900,
+      },
+    ],
   },
 };
 
