@@ -20,29 +20,26 @@ function LeftPage() {
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
 
   useEffect(() => {
+    const dialogElement = document.getElementById("driver-popover-content");
+    const closeButton = dialogElement?.getElementsByClassName(
+      "driver-popover-close-btn"
+    )[0] as HTMLButtonElement;
+    const dialogTitle = document.getElementById("driver-popover-title");
+
     if (isProductTour) {
       runDriver();
     }
     if (typeof document !== "undefined") {
-      const dialogElement = document.getElementById("driver-popover-content");
-      const closeButton = document.querySelector(".driver-popover-close-btn");
-      const commandButton = document.getElementById("command-button");
-      const dialogTitle = document.getElementById("driver-popover-title");
       if (dialogElement) {
         dialogElement.setAttribute("aria-labelledby", "driver-popover-title");
         dialogElement.setAttribute(
           "aria-describedby",
           "driver-popover-description"
         );
+        dialogElement.setAttribute("role", "alertdialog");
       }
       if (closeButton) {
-        closeButton.setAttribute("aria-label", "Close");
-      }
-      if (commandButton) {
-        commandButton.setAttribute(
-          "aria-label",
-          "Your Accessible Button Label"
-        );
+        closeButton!.setAttribute("aria-label", "close");
       }
       if (dialogTitle) {
         dialogTitle.textContent = "Dark Mode Switcher";
