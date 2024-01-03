@@ -126,7 +126,10 @@ const Sharing = () => {
           handleKeyDown={handleKeyDown}
         />
       ) : (
-        <ButtonSign signIn={() => signIn("github")} />
+        <div className="border-t border-neutral-400">
+          <p className="text-center text-neutral-400">Please Sign in to Chat</p>
+          <ButtonSign signIn={() => signIn("github")} />
+        </div>
       )}
     </>
   );

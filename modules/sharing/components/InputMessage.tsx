@@ -14,7 +14,7 @@ const InputMessage = ({
   handleKeyDown,
 }: inputMessageProps) => {
   return (
-    <div className="flex items-center justify-center gap-x-3 pt-4">
+    <div className="flex items-center justify-center gap-x-3 pt-4 border-t border-neutral-400">
       <input
         type="text"
         value={newMessage}
