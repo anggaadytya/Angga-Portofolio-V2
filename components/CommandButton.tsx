@@ -15,26 +15,6 @@ const CommandButton = () => {
     setOpen(!open);
   };
 
-  const handleClickOutside = (event: any) => {
-    if (redDivRef.current && !redDivRef.current.contains(event.target)) {
-      setOpen(false);
-    }
-  };
-
-  const handleEscKey = (event: KeyboardEvent) => {
-    if (event.keyCode === 27) {
-      setOpen(false);
-    }
-  };
-
-  const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.ctrlKey && event.key === "k") {
-      event.preventDefault();
-
-      setOpen(true);
-    }
-  };
-
   const handleCloseCommand = () => {
     setOpen(false);
   };
@@ -44,17 +24,35 @@ const CommandButton = () => {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleEscKey);
-      document.addEventListener("keydown", handleKeyPress);
-  
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-        document.removeEventListener("keydown", handleEscKey);
-        document.removeEventListener("keydown", handleKeyPress);
-      };
-    }
+    const handleClickOutside = (event: any) => {
+      if (redDivRef.current && !redDivRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.keyCode === 27) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === "k") {
+        event.preventDefault();
+
+        setOpen(true);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscKey);
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("keydown", handleKeyPress);
+    };
   }, []);
 
   const filterLinks = [...MenuLinks, ...SocialLinks, ...AnalyticsLink].filter(

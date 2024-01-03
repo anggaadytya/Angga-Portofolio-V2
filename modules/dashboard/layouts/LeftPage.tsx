@@ -18,39 +18,37 @@ function LeftPage() {
   const All_Projects = PROJECTS.length;
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
-  const dialogElement = document.getElementById("driver-popover-content");
-  const closeButton = document.querySelector(".driver-popover-close-btn");
-  const commandButton = document.getElementById("command-button");
-  const dialogTitle = document.getElementById("driver-popover-title");
 
   useEffect(() => {
     if (isProductTour) {
       runDriver();
     }
-    if (dialogElement) {
-      dialogElement.setAttribute("aria-labelledby", "driver-popover-title");
-      dialogElement.setAttribute(
-        "aria-describedby",
-        "driver-popover-description"
-      );
+    if (typeof document !== "undefined") {
+      const dialogElement = document.getElementById("driver-popover-content");
+      const closeButton = document.querySelector(".driver-popover-close-btn");
+      const commandButton = document.getElementById("command-button");
+      const dialogTitle = document.getElementById("driver-popover-title");
+      if (dialogElement) {
+        dialogElement.setAttribute("aria-labelledby", "driver-popover-title");
+        dialogElement.setAttribute(
+          "aria-describedby",
+          "driver-popover-description"
+        );
+      }
+      if (closeButton) {
+        closeButton.setAttribute("aria-label", "Close");
+      }
+      if (commandButton) {
+        commandButton.setAttribute(
+          "aria-label",
+          "Your Accessible Button Label"
+        );
+      }
+      if (dialogTitle) {
+        dialogTitle.textContent = "Dark Mode Switcher";
+      }
     }
-    if (closeButton) {
-      closeButton.setAttribute("aria-label", "Close");
-    }
-    if (commandButton) {
-      commandButton.setAttribute("aria-label", "Your Accessible Button Label");
-    }
-    if (dialogTitle) {
-      dialogTitle.textContent = "Dark Mode Switcher";
-    }
-  }, [
-    isProductTour,
-    dialogElement,
-    closeButton,
-    commandButton,
-    dialogTitle,
-    runDriver,
-  ]);
+  });
 
   return (
     <>
