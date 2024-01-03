@@ -53,7 +53,7 @@ const CommandButton = () => {
       document.removeEventListener("keydown", handleEscKey);
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [setOpen]);
 
   const filterLinks = [...MenuLinks, ...SocialLinks, ...AnalyticsLink].filter(
     (link) => link.title.toLowerCase().includes(searchInput.toLowerCase())
