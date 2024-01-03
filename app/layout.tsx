@@ -22,24 +22,23 @@ export const metadata: Metadata = {
     url: METADATA.authors.url,
   },
   openGraph: {
-    // images: "https://avatars.githubusercontent.com/u/114200420?v=4",
     url: METADATA.openGraph.url,
     siteName: METADATA.openGraph.siteName,
     locale: METADATA.openGraph.locale,
     type: "website",
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        url: "https://res.cloudinary.com/ddugt5n5v/image/upload/v1704298938/metadata/Screenshot_2024-01-03_232042_dkbem2.png",
         width: 800,
         height: 600,
       },
       {
-        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        url: "https://res.cloudinary.com/ddugt5n5v/image/upload/v1704298938/metadata/Screenshot_2024-01-03_232042_dkbem2.png",
         width: 1200,
         height: 630,
       },
       {
-        url: "https://avatars.githubusercontent.com/u/114200420?v=4",
+        url: "https://res.cloudinary.com/ddugt5n5v/image/upload/v1704298938/metadata/Screenshot_2024-01-03_232042_dkbem2.png",
         width: 1600,
         height: 900,
       },
