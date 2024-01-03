@@ -27,6 +27,7 @@ const AvatarImage = ({ className }: ImageProps) => {
           height={900}
           className="object-cover w-full h-full rounded-full"
           loading="eager"
+          priority={true}
         />
       </motion.div>
     </motion.div>

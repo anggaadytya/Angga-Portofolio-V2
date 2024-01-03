@@ -1,15 +1,110 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ToggleTheme from "@/components/ToggleTheme";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import AvatarImage from "@/components/AvatarImage";
 import HomeButton from "@/components/HomeButton";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
 
 const HomePage = () => {
+  const [init, setInit] = useState(false);
+
+  const none = "none";
+  const out = "out";
+
+  const particlesLoaded = async (container?: Container): Promise<void> => {};
+
+  const options: ISourceOptions = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "#111",
+        },
+      },
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+          onHover: {
+            enable: true,
+            mode: "repulse",
+          },
+        },
+        modes: {
+          push: {
+            quantity: 4,
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.6,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#ffffff",
+        },
+        links: {
+          color: "#ffffff",
+          distance: 170,
+          enable: true,
+          opacity: 0.5,
+          width: 1,
+        },
+        move: {
+          direction: none,
+          enable: true,
+          outModes: {
+            default: out,
+          },
+          random: false,
+          speed: 6,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 80,
+        },
+        opacity: {
+          value: 0.5,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
+    }),
+    []
+  );
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
   return (
-    <main>
-      <div className="p-5 flex flex-col items-center justify-center mx-auto w-full h-screen">
+    <main className="">
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+        className="-z-10 fixed"
+      />
+      <div className="p-5 flex flex-col items-center justify-center mx-auto w-full h-screen z-10">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{
@@ -52,7 +147,7 @@ const HomePage = () => {
             ]}
             wrapper="span"
             speed={30}
-            style={{ fontSize: "1em", display: "inline-block" }}
+            className="text-[1em] inline-block"
             repeat={Infinity}
           />
         </motion.div>

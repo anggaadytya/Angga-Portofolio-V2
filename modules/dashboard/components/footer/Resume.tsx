@@ -17,6 +17,7 @@ const Resume = () => {
         specific focus on Frontend Development.
       </p>
       <button
+        id="download-resume"
         onClick={handleDownloadResume}
         className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium text-neutral-50"
       >

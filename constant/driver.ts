@@ -20,4 +20,22 @@ export const tourGuideWEB: DriveStep[] = [
       align: "center",
     },
   },
+  {
+    element: "#download-resume",
+    popover: {
+      title: "Download Resume",
+      description: "Click this button to download my resume.",
+      side: "left",
+      align: "start",
+    },
+  },
+  {
+    element: "#feature-show",
+    popover: {
+      title: "Features in",
+      description: "select the features to see the features.",
+      side: "bottom",
+      align: "end",
+    },
+  },
 ];
