@@ -130,7 +130,7 @@ export const AnalyticsLink: SocialLinks[] = [
     },
     title: "Google Analytics",
     icons: <GrAnalytics />,
-    href: "https://github.com/anggaadytya",
+    href: "https://analytics.google.com/analytics/web/#/p415378193/reports/intelligenthome",
     menu: "Links",
     externalLink: true,
   },
