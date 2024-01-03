@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToggleTheme from "@/components/ToggleTheme";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import AvatarImage from "@/components/AvatarImage";
 import HomeButton from "@/components/HomeButton";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
 const HomePage = () => {
@@ -14,8 +14,6 @@ const HomePage = () => {
 
   const none = "none";
   const out = "out";
-
-  const particlesLoaded = async (container?: Container): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -98,31 +96,9 @@ const HomePage = () => {
 
   return (
     <main className="">
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-        className="-z-10 fixed"
-      />
+      <Particles id="tsparticles" options={options} className="-z-10 fixed" />
       <div className="p-5 flex flex-col items-center justify-center mx-auto w-full h-screen z-10">
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{
-            scale: 1,
-            opacity: 1,
-            transition: {
-              duration: 0.5,
-              stiffness: 200,
-              delay: 0.2,
-              type: "spring",
-              damping: 10,
-            },
-          }}
-          className="bg-neutral-600 rounded-full h-60 w-60 md:h-80 md:w-80 shadow-md shadow-neutral-800 dark:shadow-neutral-400"
-        >
-          <AvatarImage />
-        </motion.div>
-
+        <AvatarImage />
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           animate={{
@@ -134,47 +110,35 @@ const HomePage = () => {
               damping: 20,
             },
           }}
-          className="font-bold text-xl md:text-4xl py-5"
+          className="pt-5"
         >
-          <TypeAnimation
-            sequence={[
-              "Muhammad Angga Adytya",
-              2000, // wait 1s before replacing "Mice" with "Hamsters"
-              "Fullstack Web Developer",
-              2000,
-              "Frontend Developer",
-              2000,
-            ]}
-            wrapper="span"
-            speed={30}
-            className="text-[1em] inline-block"
-            repeat={Infinity}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: {
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            },
-          }}
-        >
-          <p className="text-neutral-600 dark:text-neutral-400 lg:max-w-lg text-center font-normal">
-            This is my personal website and showcase my project
-          </p>
+          <div className="font-bold text-xl md:text-4xl py-5">
+            <TypeAnimation
+              sequence={[
+                "Muhammad Angga Adytya",
+                2000,
+                "Fullstack Web Developer",
+                2000,
+                "Frontend Developer",
+                2000,
+              ]}
+              wrapper="span"
+              speed={30}
+              className="text-[1em] text-center flex justify-center"
+              repeat={Infinity}
+            />
+          </div>
+          <div>
+            <p className="text-neutral-600 dark:text-neutral-400 lg:max-w-lg text-center font-normal">
+              This is my personal website and showcase my project
+            </p>
+          </div>
         </motion.div>
       </div>
-
       <div className="flex justify-center">
         <motion.div
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ opacity: 0 }}
           animate={{
-            y: 0,
             opacity: 1,
             transition: {
               duration: 0.5,
