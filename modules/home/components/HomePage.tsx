@@ -8,9 +8,11 @@ import HomeButton from "@/components/HomeButton";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
+import { useTheme } from "next-themes";
 
 const HomePage = () => {
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
 
   const none = "none";
   const out = "out";
@@ -19,7 +21,7 @@ const HomePage = () => {
     () => ({
       background: {
         color: {
-          value: "#111",
+          value: theme === "dark" ? "#111" : "#fff",
         },
       },
       fpsLimit: 120,
@@ -46,10 +48,10 @@ const HomePage = () => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: theme === "dark" ? "#ffffff" : "#111111",
         },
         links: {
-          color: "#ffffff",
+          color: theme === "dark" ? "#ffffff" : "#111111",
           distance: 170,
           enable: true,
           opacity: 0.5,
@@ -83,7 +85,7 @@ const HomePage = () => {
       },
       detectRetina: true,
     }),
-    []
+    [theme]
   );
 
   useEffect(() => {
@@ -92,7 +94,7 @@ const HomePage = () => {
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [theme]);
 
   return (
     <main className="">
