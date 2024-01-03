@@ -14,13 +14,17 @@ export default function createDrivers({ steps }: CreateDriversProps) {
   });
 
   if (typeof window !== "undefined") {
-    isProductTour = !(window.localStorage.getItem("cb-product-tour") !== null);
+    isProductTour = !(window.localStorage.getItem("tour-guide") !== null);
   }
 
   function runDriver() {
     driverObj?.drive();
-    window.localStorage.setItem("cb-product-tour", "true");
+    window.localStorage.setItem("tour-guide", "true");
   }
 
   return { runDriver, isProductTour };
+ 
+
 }
+
+

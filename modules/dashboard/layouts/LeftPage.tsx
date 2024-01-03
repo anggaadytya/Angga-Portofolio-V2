@@ -18,12 +18,20 @@ function LeftPage() {
   const All_Projects = PROJECTS.length;
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
+  const dialogElement = document.getElementById("driver-popover-content");
 
   useEffect(() => {
     if (isProductTour) {
       runDriver();
     }
-  })
+    if (dialogElement) {
+      dialogElement.setAttribute("aria-labelledby", "driver-popover-title");
+      dialogElement.setAttribute(
+        "aria-describedby",
+        "driver-popover-description"
+      );
+    }
+  });
   return (
     <>
       <motion.header
