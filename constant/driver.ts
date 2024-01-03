@@ -25,8 +25,8 @@ export const tourGuideWEB: DriveStep[] = [
     popover: {
       title: "Download Resume",
       description: "Click this button to download my resume.",
-      side: "left",
-      align: "start",
+      side: "bottom",
+      align: "center",
     },
   },
   {
@@ -34,8 +34,8 @@ export const tourGuideWEB: DriveStep[] = [
     popover: {
       title: "Features in",
       description: "select the features to see the features.",
-      side: "bottom",
-      align: "end",
+      side: "left",
+      align: "start",
     },
   },
 ];
