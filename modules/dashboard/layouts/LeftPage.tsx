@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ToggleTheme from "../../../components/ToggleTheme";
 import WorkHistory from "../components/header/WorkHistory";
@@ -14,13 +14,14 @@ import createDrivers from "@/libs/driver";
 import { tourGuideWEB } from "@/constant/driver";
 
 function LeftPage() {
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   const All_Projects = PROJECTS.length;
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
   const dialogElement = document.getElementById("driver-popover-content");
   const closeButton = document.querySelector(".driver-popover-close-btn");
   const commandButton = document.getElementById("command-button");
+  const dialogTitle = document.getElementById("driver-popover-title");
 
   useEffect(() => {
     if (isProductTour) {
@@ -38,6 +39,9 @@ function LeftPage() {
     }
     if (commandButton) {
       commandButton.setAttribute("aria-label", "Your Accessible Button Label");
+    }
+    if (dialogTitle) {
+      dialogTitle.textContent = "Dark Mode Switcher";
     }
   });
   return (
