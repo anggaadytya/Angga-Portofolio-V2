@@ -19,6 +19,8 @@ function LeftPage() {
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
   const dialogElement = document.getElementById("driver-popover-content");
+  const closeButton = document.querySelector(".driver-popover-close-btn");
+  const commandButton = document.getElementById("command-button");
 
   useEffect(() => {
     if (isProductTour) {
@@ -30,6 +32,12 @@ function LeftPage() {
         "aria-describedby",
         "driver-popover-description"
       );
+    }
+    if (closeButton) {
+      closeButton.setAttribute("aria-label", "Close");
+    }
+    if (commandButton) {
+      commandButton.setAttribute("aria-label", "Your Accessible Button Label");
     }
   });
   return (
