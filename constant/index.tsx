@@ -4,12 +4,14 @@ import {
   SiInstagram,
   SiDiscord,
   SiTwitter,
+  SiTiktok,
 } from "react-icons/si";
 import { PiHouseLight } from "react-icons/pi";
 import {
   FiBox,
   FiCpu,
   FiDatabase,
+  FiFile,
   FiGrid,
   FiMessageCircle,
 } from "react-icons/fi";
@@ -23,6 +25,14 @@ interface SocialLinks {
   menu: string;
   feature?: boolean;
   externalLink?: boolean;
+  bgColor?: string;
+}
+
+interface workLinks {
+  title: string;
+  place: string;
+  icons: JSX.Element;
+  date: string;
 }
 
 export const SocialLinks: SocialLinks[] = [
@@ -34,6 +44,7 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiGithub />,
     href: "https://github.com/anggaadytya",
     menu: "Link",
+    bgColor: "bg-neutral-700",
   },
   {
     toLowerCase() {
@@ -43,6 +54,7 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiInstagram />,
     href: "https://www.instagram.com/angga_adytya/",
     menu: "Link",
+    bgColor: "bg-red-500",
   },
   {
     toLowerCase() {
@@ -52,6 +64,7 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiDiscord />,
     href: "https://discord.gg/pns2x7w4",
     menu: "Link",
+    bgColor: "bg-purple-600",
   },
   {
     toLowerCase() {
@@ -61,6 +74,7 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiLinkedin />,
     href: "https://www.linkedin.com/in/muhammad-angga-adytya/",
     menu: "Link",
+    bgColor: "bg-blue-500",
   },
   {
     toLowerCase() {
@@ -70,6 +84,17 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiTwitter />,
     href: "https://twitter.com/",
     menu: "Link",
+    bgColor: "bg-blue-500",
+  },
+  {
+    toLowerCase() {
+      return "";
+    },
+    title: "Tiktok",
+    icons: <SiTiktok />,
+    href: "",
+    menu: "Link",
+    bgColor: "bg-neutral-800",
   },
 ];
 
@@ -121,6 +146,16 @@ export const MenuLinks: SocialLinks[] = [
     menu: "Pages",
     feature: true,
   },
+  {
+    toLowerCase() {
+      return "";
+    },
+    title: "Consume API",
+    icons: <FiFile />,
+    href: "/dashboard/consume",
+    menu: "Pages",
+    feature: false,
+  },
 ];
 
 export const AnalyticsLink: SocialLinks[] = [
@@ -145,13 +180,6 @@ export const AnalyticsLink: SocialLinks[] = [
     externalLink: true,
   },
 ];
-
-interface workLinks {
-  title: string;
-  place: string;
-  icons: JSX.Element;
-  date: string;
-}
 
 export const WorkLinks: workLinks[] = [
   {

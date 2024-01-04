@@ -11,7 +11,7 @@ const Feature = () => {
       </h1>
       <div
         id="feature-show"
-        className="overflow-y-auto maxh-[11rem] md:max-h-[13rem] flex flex-col gap-y-3 mt-4"
+        className="overflow-y-auto maxh-[11rem] md:max-h-[13rem] flex flex-col gap-y-3 mt-4 scrollbar-hide"
       >
         {filterMenu.map((menu, index) => (
           <Link
@@ -28,7 +28,9 @@ const Feature = () => {
               </h2>
             </div>
 
-            <h3 className="text-neutral-400 text-xs px-2 pt-2">Muhammad Angga Adytya</h3>
+            <h3 className="text-neutral-400 text-xs px-2 pt-2">
+              Muhammad Angga Adytya
+            </h3>
           </Link>
         ))}
       </div>

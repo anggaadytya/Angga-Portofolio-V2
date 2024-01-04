@@ -5,6 +5,8 @@ import TitleDashboard from "@/components/TitleDashboard";
 import { FiPhoneCall } from "react-icons/fi";
 import { useSharingStore } from "@/stores/sharingStore";
 import { toast } from "react-toastify";
+import { SocialLinks } from "@/constant";
+import Link from "next/link";
 
 const Contact = () => {
   const { loading, setLoading } = useSharingStore();
@@ -65,6 +67,21 @@ const Contact = () => {
         icons={<FiPhoneCall />}
       />
       <div className="w-full flex flex-col transition-all duration-300 ease-in">
+        <h1 className="text-sm font-medium">Social Media</h1>
+        <div className="flex flex-wrap gap-2  py-6">
+          {SocialLinks.map((social, index) => (
+            <Link
+              href={social.href}
+              key={index}
+              className={`flex items-center justify-center gap-x-1 w-[110px] h-[30px] rounded-md ${social.bgColor} `}
+            >
+              {social.icons}
+              <h1 className="text-sm font-medium tracking-wide">
+                {social.title}
+              </h1>
+            </Link>
+          ))}
+        </div>
         <h1 className="text-sm font-medium">send me a message</h1>
         <form className="w-full  gap-4 py-4 grid" onSubmit={handleEmail}>
           <input
