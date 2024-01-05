@@ -12,11 +12,9 @@ const Consume = () => {
         icons={<FiFile />}
       />
       <LineBreak />
-      <div>Github</div>
-      <LineBreak/>
-      <div>PageSpeed Insight</div>
-      <LineBreak/>
-      <div>Pokemon</div>
+      <div className=" h-40 w-full flex items-center justify-center text-center">
+        <h1>Comming Soon</h1>
+      </div>
     </>
   );
 };
