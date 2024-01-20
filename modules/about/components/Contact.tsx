@@ -90,6 +90,7 @@ const Contact = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleInputChange}
+            required
             className="h-9 rounded px-2 placeholder:text-sm outline-none col-span-2 md:col-span-1 border border-neutral-300 dark:border-neutral-600"
           />
           <input
@@ -97,6 +98,7 @@ const Contact = () => {
             name="email"
             placeholder="Email"
             value={formData.email}
+            required
             onChange={handleInputChange}
             className="h-9 rounded px-2 placeholder:text-sm outline-none col-span-2 md:col-span-1 border border-neutral-300 dark:border-neutral-600"
           />
@@ -105,6 +107,7 @@ const Contact = () => {
             placeholder="Message"
             value={formData.message}
             onChange={handleInputChange}
+            required
             className="rounded px-2 placeholder:text-sm outline-none col-span-2 border border-neutral-300 dark:border-neutral-600"
           ></textarea>
           <button
