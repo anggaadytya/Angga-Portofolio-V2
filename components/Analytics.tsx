@@ -10,7 +10,6 @@ import { sendPageView } from "@/libs/gtm";
 export default function Analytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const GTM_ID = process.env.GTM_ID;
 
   useEffect(() => {
     if (pathname) {

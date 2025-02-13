@@ -12,3 +12,6 @@ export function Provider({ children }: { children: React.ReactNode }) {
     </NextUIProvider>
   );
 }
+
+
+gap-[3.5rem] md:gap-[6rem] lg:gap-[5.3rem]

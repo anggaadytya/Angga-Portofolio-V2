@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://angga-project.vercel.app
+
+# Sitemaps
+Sitemap: https://rawat.id/sitemap.xml

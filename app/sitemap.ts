@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = process.env.DOMAIN || "http://localhost:3000";
+  const domain = "https://angga-project.vercel.app";
   return [
     {
       url: domain,

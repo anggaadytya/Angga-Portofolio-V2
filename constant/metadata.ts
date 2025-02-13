@@ -1,17 +1,17 @@
 export const METADATA = {
-  creator: "Angga Adytya",
+  creator: "Muhammad Angga Adytya",
   description: "Personal website of Angga Adytya and Showcase my projects",
   keyword:
-    "anggaadytya, personal website, code, programming, javascript, typescript",
+    "muhammadanggaadytya, personal website, code, programming, javascript, typescript, Muhammad Angga Adytya",
   authors: {
-    name: "Angga Adytya",
-    url: process.env.DOMAIN,
+    name: "Muhammad Angga Adytya",
+    url: "https://angga-project.vercel.app/",
   },
   openGraph: {
-    url: process.env.DOMAIN,
-    siteName: "Angga Adytya",
+    url: "https://angga-project.vercel.app/",
+    siteName: "Muhammad Angga Adytya",
     locale: "id-ID",
   },
-  exTitle: "| Angga Adytya",
+  exTitle: "| Muhammad Angga Adytya",
   profile: "https://avatars.githubusercontent.com/u/114200420?v=4",
 };

@@ -9,11 +9,7 @@ import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : process.env.DOMAIN || ""
-  ),
+  metadataBase: new URL("https://angga-project.vercel.app/"),
   description: METADATA.description,
   keywords: METADATA.keyword,
   creator: METADATA.creator,
