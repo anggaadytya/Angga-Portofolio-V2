@@ -15,17 +15,35 @@ export function generateMetadata({ params }: projectProps) {
   return {
     title: filter[0].title,
     description: filter[0].description,
+    keywords: (
+      filter[0]?.techs?.map((tech: string) => tech) || ["Muhammad Angga Adytya"]
+    ).concat(["Rawat.ID", "blog", "artikel"]),
     openGraph: {
-      images: filter[0].image,
-      url: `${METADATA.openGraph.url}/dashboard/project/${filter[0].slug}`,
-      siteName: METADATA.openGraph.siteName,
-      locale: METADATA.openGraph.locale,
       type: "article",
-      authors: METADATA.creator,
+      locale: METADATA.openGraph.locale,
+      article: {
+        authors: METADATA.creator,
+      },
+      images: [
+        {
+          url: filter[0].image,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: filter[0].image,
+          width: 1200,
+          height: 630,
+        },
+        {
+          url: filter[0].image,
+          width: 1600,
+          height: 900,
+        },
+      ],
     },
-    keywords: filter[0].title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/dashboard/project/${filter[0].slug}`,
+      canonical: `${process.env.DOMAIN}/project/${filter[0].slug}`,
     },
   };
 }

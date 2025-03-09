@@ -22,7 +22,7 @@ const CardProject = ({
 }: CardProjectProps) => {
   return (
     <Link
-      href={`/dashboard/project/${slug}`}
+      href={`/project/${slug}`}
       key={id}
       className="flex items-center gap-x-4 hover:bg-neutral-800 rounded-lg p-3 my-4 transition-all duration-200 ease-in-out cursor-pointer group relative py-5  shadow-sm shadow-neutral-800 dark:shadow-neutral-400"
     >

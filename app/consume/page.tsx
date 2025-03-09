@@ -6,16 +6,16 @@ import Consume from "@/modules/consume";
 import BackButton from "@/components/BackButton";
 
 export const metadata: Metadata = {
-  title: `${METADATA.creator} | Consume API`,
+  title: `${METADATA.creator}`,
   alternates: {
-    canonical: `${process.env.DOMAIN}/dashboard/consume`,
+    canonical: `${process.env.DOMAIN}/consume`,
   },
 };
 
 export default function page() {
   return (
     <Container>
-      <BackButton url="/dashboard" />
+      <BackButton url="/" />
       <Consume />
     </Container>
   );

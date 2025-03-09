@@ -7,6 +7,9 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import Analytics from "@/components/Analytics";
+import NextAuthProvider from "@/libs/nextAuth";
+import LeftPage from "@/modules/dashboard/layouts/LeftPage";
+import RightPage from "@/modules/dashboard/layouts/RightPage";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://angga-project.vercel.app/"),
@@ -58,7 +61,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`scrollbar-hide ${sora.className}`}>
         <Provider>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <div className="max-w-[78rem] mx-auto">
+            <div className="gap-3 flex md:mt-5 flex-col md:flex-row justify-center">
+              <LeftPage />
+              <NextAuthProvider>
+                <Suspense fallback={<Loading />}>{children}</Suspense>
+              </NextAuthProvider>
+              <RightPage />
+            </div>
+          </div>
         </Provider>
         <GoogleAnalytics
           measurementId={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
