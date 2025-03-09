@@ -10,6 +10,7 @@ import Analytics from "@/components/Analytics";
 import NextAuthProvider from "@/libs/nextAuth";
 import LeftPage from "@/modules/dashboard/layouts/LeftPage";
 import RightPage from "@/modules/dashboard/layouts/RightPage";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://angga-project.vercel.app/"),
@@ -59,6 +60,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-7HR300DJ9F`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7HR300DJ9F', { 
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="FuhGMdxQ9lcHyhn5vouXd95_MY2W8I0uRLREm3gYPL8"
+        />
+      </head>
       <body className={`scrollbar-hide ${sora.className}`}>
         <Provider>
           <div className="max-w-[78rem] mx-auto">
