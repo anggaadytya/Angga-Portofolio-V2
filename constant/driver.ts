@@ -38,4 +38,13 @@ export const tourGuideWEB: DriveStep[] = [
       align: "start",
     },
   },
+  {
+    element: "#music-player",
+    popover: {
+      title: "Music Player",
+      description: "Music Player in Website.",
+      side: "left",
+      align: "start",
+    },
+  },
 ];

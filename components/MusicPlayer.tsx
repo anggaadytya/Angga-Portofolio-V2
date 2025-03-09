@@ -54,13 +54,13 @@ const MusicPlayer = () => {
   const nextSongHandler = () => {
     const newIndex = (currentSongIndex + 1) % MUSIC.length;
     setCurrentSongIndex(newIndex);
-    setIsPlaying(true); // Untuk memastikan lagu berikutnya diputar setelah pergantian lagu
+    setIsPlaying(true);
   };
 
   const prevSongHandler = () => {
     const newIndex = (currentSongIndex - 1 + MUSIC.length) % MUSIC.length;
     setCurrentSongIndex(newIndex);
-    setIsPlaying(true); // Untuk memastikan lagu sebelumnya diputar setelah pergantian lagu
+    setIsPlaying(true);
   };
 
   const handleEnded = () => {
@@ -68,7 +68,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="music-player">
+    <div className="music-player" id="music-player">
       <div className="song-info">
         <Image
           src={MUSIC[currentSongIndex].image}
