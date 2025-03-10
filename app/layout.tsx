@@ -87,6 +87,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`scrollbar-hide ${sora.className}`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NM368W55"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Provider>
           <div className="max-w-[78rem] mx-auto">
             <div className="gap-3 flex md:mt-5 flex-col md:flex-row justify-center">
