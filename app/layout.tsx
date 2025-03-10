@@ -6,11 +6,13 @@ import { Provider } from "@/hooks/Provider";
 import { Suspense } from "react";
 import Loading from "./loading";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
-import Analytics from "@/components/Analytics";
 import NextAuthProvider from "@/libs/nextAuth";
 import LeftPage from "@/modules/dashboard/layouts/LeftPage";
 import RightPage from "@/modules/dashboard/layouts/RightPage";
 import Script from "next/script";
+import AnalyticsG from "@/components/Analytics";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://angga-project.vercel.app/"),
@@ -99,7 +101,9 @@ export default function RootLayout({
         <GoogleAnalytics
           measurementId={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
         />
+        <AnalyticsG />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 import { sendPageView } from "@/libs/gtm";
 
-export default function Analytics() {
+export default function AnalyticsG() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
