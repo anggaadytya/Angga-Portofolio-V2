@@ -113,15 +113,6 @@ export const MenuLinks: SocialLinks[] = [
     toLowerCase() {
       return "";
     },
-    title: "Dashboard",
-    icons: <FiGrid />,
-    href: "/dashboard",
-    menu: "Pages",
-  },
-  {
-    toLowerCase() {
-      return "";
-    },
     title: "About",
     icons: <FiBox />,
     href: "/about",
