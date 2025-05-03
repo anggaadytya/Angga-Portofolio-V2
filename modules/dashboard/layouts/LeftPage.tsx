@@ -15,7 +15,7 @@ import { tourGuideWEB } from "@/constant/driver";
 
 function LeftPage() {
   const [open, setOpen] = useState<boolean>(false);
-  const All_Projects = PROJECTS.length;
+  const All_Projects = PROJECTS.length + 3;
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourGuideWEB });
 
@@ -58,7 +58,7 @@ function LeftPage() {
           y: 0,
           transition: { duration: 0.3, type: "spring", stiffness: 120 },
         }}
-        className=" md:block bg-neutral-100 dark:bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl shadow shadow-neutral-800 dark:shadow-neutral-400 p-3"
+        className=" md:block bg-neutral-100 dark:bg-[#1c1c1c] w-full md:w-80 h-fit md:sticky top-5 rounded-2xl shadow shadow-neutral-700 dark:shadow-neutral-400 p-3"
       >
         <section>
           <div className="flex">
@@ -79,7 +79,7 @@ function LeftPage() {
                 Muhammad Angga Adytya
               </h1>
               <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 mt-2">
-                Frontend Developer | React Developer
+                Frontend Developer
               </p>
 
               <div className="absolute top-0 right-0">

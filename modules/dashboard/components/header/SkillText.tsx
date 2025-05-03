@@ -1,7 +1,7 @@
 import React from "react";
 
 const SkillText = () => {
-  const skills = ["ReactJs", "NextJs", "TailwindCss", "Typescript"];
+  const skills = ["NextJs", "TailwindCss", "Typescript", "VueJs"];
 
   return (
     <div className="flex w-full">

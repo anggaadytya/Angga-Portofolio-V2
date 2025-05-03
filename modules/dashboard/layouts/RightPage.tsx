@@ -27,7 +27,7 @@ function RightPage() {
       className={`lg:block w-full lg:w-fit ${open ? "-z-10" : "z-0"} `}
     >
       <section className="w-full md:w-60 rounded-2xl h-fit md:sticky top-5">
-        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 ">
+        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-700 dark:shadow-neutral-400 ">
           <Resume />
           <LineBreak />
           <Feature />
@@ -35,7 +35,7 @@ function RightPage() {
           <SocialMedia />
         </div>
 
-        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-800 dark:shadow-neutral-400 mt-3">
+        <div className="dark:bg-[#1c1c1c] bg-neutral-100 min-w-min rounded-2xl p-4 shadow shadow-neutral-700 dark:shadow-neutral-400 mt-3">
           <MusicPlayer />
         </div>
       </section>

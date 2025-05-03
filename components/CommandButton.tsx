@@ -31,7 +31,7 @@ const CommandButton = () => {
     };
 
     const handleEscKey = (event: KeyboardEvent) => {
-      if (event.keyCode === 27) {
+      if (event.key === "Escape") {
         setOpen(false);
       }
     };
@@ -110,11 +110,11 @@ const CommandButton = () => {
                     {pagesLinks.map((link, index) => (
                       <Link
                         href={link.href}
-                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md group"
                         key={index}
                         onClick={handleCloseCommand}
                       >
-                        <div className="flex items-center gap-x-2">
+                        <div className="flex items-center gap-x-2 group-hover:text-white">
                           {link.icons ? link.icons : null}
                           <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                             {link.title}
@@ -136,11 +136,11 @@ const CommandButton = () => {
                     {socialLinks.map((link, index) => (
                       <Link
                         href={link.href}
-                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md group"
                         key={index}
                         onClick={handleCloseCommand}
                       >
-                        <div className="flex items-center gap-x-2">
+                        <div className="flex items-center gap-x-2 group-hover:text-white">
                           {link.icons ? link.icons : null}
                           <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                             {link.title}
@@ -162,11 +162,11 @@ const CommandButton = () => {
                     {analyticLinks.map((link, index) => (
                       <Link
                         href={link.href}
-                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md"
+                        className="flex items-center justify-between py-2 px-4 hover:bg-neutral-600 hover:cursor-pointer hover:rounded-md group"
                         key={index}
                         onClick={handleCloseCommand}
                       >
-                        <div className="flex items-center gap-x-2">
+                        <div className="flex items-center gap-x-2 group-hover:text-white">
                           {link.icons ? link.icons : null}
                           <h1 className="text-neutral-400 dark:text-neutral-200 tracking-wider text-sm">
                             {link.title}

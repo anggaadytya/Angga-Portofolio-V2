@@ -19,7 +19,7 @@ const Resume = () => {
       <button
         id="download-resume"
         onClick={handleDownloadResume}
-        className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium text-neutral-50"
+        className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium text-neutral-50 hover:bg-neutral-600 "
       >
         Download
       </button>

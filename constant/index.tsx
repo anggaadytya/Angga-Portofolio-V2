@@ -16,6 +16,7 @@ import {
   FiMessageCircle,
 } from "react-icons/fi";
 import { GrAnalytics } from "react-icons/gr";
+import { FaGithub } from "react-icons/fa";
 
 interface SocialLinks {
   toLowerCase(): unknown;
@@ -44,7 +45,7 @@ export const SocialLinks: SocialLinks[] = [
     icons: <SiGithub />,
     href: "https://github.com/anggaadytya",
     menu: "Link",
-    bgColor: "bg-neutral-700",
+    bgColor: "bg-neutral-600",
   },
   {
     toLowerCase() {
@@ -56,16 +57,16 @@ export const SocialLinks: SocialLinks[] = [
     menu: "Link",
     bgColor: "bg-red-500",
   },
-  {
-    toLowerCase() {
-      return "";
-    },
-    title: "Discord",
-    icons: <SiDiscord />,
-    href: "https://discord.gg/pns2x7w4",
-    menu: "Link",
-    bgColor: "bg-purple-600",
-  },
+  // {
+  //   toLowerCase() {
+  //     return "";
+  //   },
+  //   title: "Discord",
+  //   icons: <SiDiscord />,
+  //   href: "https://discord.gg/pns2x7w4",
+  //   menu: "Link",
+  //   bgColor: "bg-purple-600",
+  // },
   {
     toLowerCase() {
       return "";
@@ -92,9 +93,9 @@ export const SocialLinks: SocialLinks[] = [
     },
     title: "Tiktok",
     icons: <SiTiktok />,
-    href: "",
+    href: "https://www.tiktok.com/@anggaadytya.my.id",
     menu: "Link",
-    bgColor: "bg-neutral-800",
+    bgColor: "bg-neutral-600",
   },
 ];
 
@@ -150,6 +151,16 @@ export const MenuLinks: SocialLinks[] = [
     toLowerCase() {
       return "";
     },
+    title: "Github Contributions",
+    icons: <FaGithub />,
+    href: "/contributor",
+    menu: "Pages",
+    feature: true,
+  },
+  {
+    toLowerCase() {
+      return "";
+    },
     title: "Consume API",
     icons: <FiFile />,
     href: "/consume",
@@ -182,6 +193,12 @@ export const AnalyticsLink: SocialLinks[] = [
 ];
 
 export const WorkLinks: workLinks[] = [
+  {
+    title: "Frontend Developer",
+    place: "Yeedev Studio",
+    icons: <SiGithub />,
+    date: "May 2024 - Now",
+  },
   {
     title: "Web Developer Intern",
     place: "PT. Pertamina Hulu Rokan Zona 1 Field Rantau",

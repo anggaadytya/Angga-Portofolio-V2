@@ -1,5 +1,6 @@
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BsFillBootstrapFill } from "react-icons/bs";
+import { RiVuejsFill } from "react-icons/ri";
 import {
   SiCss3,
   SiExpress,
@@ -21,6 +22,7 @@ import {
   SiVercel,
   SiMysql,
   SiPostman,
+  SiRevue,
 } from "react-icons/si";
 
 type stacksProps = {
@@ -55,4 +57,5 @@ export const STACKS: stacksProps = {
   Vercel: <SiVercel size={iconSize} />,
   MySql: <SiMysql size={iconSize} className="text-blue-400" />,
   Postman: <SiPostman size={iconSize} className="text-orange-600" />,
+  Vue: <RiVuejsFill size={iconSize} className="text-green-700" />,
 };

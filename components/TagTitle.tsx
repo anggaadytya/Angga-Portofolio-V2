@@ -17,7 +17,7 @@ const TagTitle = () => {
           </li>
         </ul>
         <p className="text-sm md:text-md text-justify text-neutral-400 dark:text-neutral-400">
-          I am a Frontend Developer. I have 2 years of experience. Focus on Web
+          I am a Frontend Developer. I have 3 years of experience. Focus on Web
           Development. I love coding. I love to learn new things.
         </p>
       </div>

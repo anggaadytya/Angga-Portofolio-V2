@@ -16,7 +16,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -24,14 +26,14 @@ const Contact = () => {
     });
   };
 
-  const handleEmail = (e: any) => {
+  const handleEmail = (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
     emailjs
       .sendForm(
         "service_kjxef31",
         "template_aaqj1ze",
-        e.target,
+        e.target as HTMLFormElement,
         "M4Y6va-AgVOD0MGUT"
       )
       .then((Response) => {
@@ -59,6 +61,7 @@ const Contact = () => {
         });
       });
   };
+
   return (
     <>
       <TitleDashboard
@@ -73,7 +76,7 @@ const Contact = () => {
             <Link
               href={social.href}
               key={index}
-              className={`flex items-center justify-center gap-x-1 w-[110px] h-[30px] rounded-md ${social.bgColor} `}
+              className={`flex items-center justify-center gap-x-1 w-[110px] h-[30px] rounded-md ${social.bgColor} text-white dark:text-black`}
             >
               {social.icons}
               <h1 className="text-sm font-medium tracking-wide">

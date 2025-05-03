@@ -24,7 +24,7 @@ const CardProject = ({
     <Link
       href={`/project/${slug}`}
       key={id}
-      className="flex items-center gap-x-4 hover:bg-neutral-800 rounded-lg p-3 my-4 transition-all duration-200 ease-in-out cursor-pointer group relative py-5  shadow-sm shadow-neutral-800 dark:shadow-neutral-400"
+      className="flex items-center gap-x-4 hover:bg-neutral-400 dark:hover:bg-neutral-800 rounded-lg p-3 my-4 transition-all duration-200 ease-in-out cursor-pointer group relative py-5  shadow-sm shadow-neutral-800 dark:shadow-neutral-400"
     >
       <Image
         src={image}
@@ -35,7 +35,7 @@ const CardProject = ({
         loading="lazy"
       />
       <div className=" w-full h-full">
-        <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg group-hover:text-neutral-300">
+        <h3 className="text-neutral-800 dark:text-neutral-300 font-medium text-lg group-hover:text-neutral-100 dark:group-hover:text-neutral-300">
           {title}
         </h3>
         <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs pe-6">
